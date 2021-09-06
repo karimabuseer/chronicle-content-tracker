@@ -2,8 +2,10 @@
   "devDependencies": {
     "jest": "^27.1.0"
   },
-  "scripts": { 
-    "test": "jest --c"
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "jest-config": "^27.1.0"
   }
 }
-
