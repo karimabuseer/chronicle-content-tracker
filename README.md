@@ -37,6 +37,8 @@ As a User,
 So I have a personal list,
 I want to be able to make an account and login.
 ```
+# Built With
+- For the backend, we decided to use Node.js and 
 
 ## Usage
 To setup the project:
@@ -45,4 +47,12 @@ To setup the project:
   1.1 Install NPM using Homebrew (macOS/Linux)
   1.2 Install NPM using the Node.js website download link (Windows) and follow instructions there
 2. Navigate to the local project directory
-3. 
+3. To run tests:
+```
+yarn test
+```
+*To run tests with a coverage report*
+```
+yarn test --coverage
+```
+
