@@ -43,7 +43,7 @@ I want to be able to make an account and login.
 ## Usage
 To setup the project:
 
-1. Install Node using Homebrew (macOS/Linux) or via the Node.js website![https://nodejs.org/en/download/] (Windows)
+1. Install Node using Homebrew (macOS/Linux) or via the [https://nodejs.org/en/download/](Node.js website!) (Windows)
 2. Navigate to the local project directory
 3. To run tests:
 ```
