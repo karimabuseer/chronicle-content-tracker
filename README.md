@@ -43,9 +43,7 @@ I want to be able to make an account and login.
 ## Usage
 To setup the project:
 
-1. Install Node and NPM 
-  1.1 Install NPM using Homebrew (macOS/Linux)
-  1.2 Install NPM using the Node.js website download link (Windows) and follow instructions there
+1. Install Node using Homebrew (macOS/Linux) or via the Node.js website![https://nodejs.org/en/download/] (Windows)
 2. Navigate to the local project directory
 3. To run tests:
 ```
