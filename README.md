@@ -1,5 +1,6 @@
-# final-project
-Final Project for Makers
+# Chronicle Content Tracker
+Final Project for Makers. For information about our approach and process, check out our wiki. 
+
 ## User Stories
 MVP user stories
 ```
@@ -37,3 +38,20 @@ As a User,
 So I have a personal list,
 I want to be able to make an account and login.
 ```
+## Built With
+- For the backend, we decided to use Node.js to run our server side applications. Express.js is used for our routing framework. Postgresql was used as our database manager. Mockup docs were created using Sketch.
+
+## Usage
+To setup the project:
+
+1. Install Node using Homebrew (macOS/Linux) or via the [Node.js website!](https://nodejs.org/en/download/) (Windows)
+2. Navigate to the local project directory
+3. Tests are run using the Jest testing suite. To run tests:
+``` 
+yarn test
+```
+*To run tests with a coverage report*
+```
+yarn test --coverage
+```
+

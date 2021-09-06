@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.1.0"
+  },
+  "name": "chronicle-content-tracker",
+  "version": "1.0.0",
+  "description": "Final project for makers.",
+  "main": "index.js",
+  "repository": "https://github.com/karimabuseer/chronicle-content-tracker.git",
+  "author": "karimabuseer <karimabuseer@gmail.com>",
+  "license": "MIT"
+}
