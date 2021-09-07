@@ -54,7 +54,12 @@ yarn test
 ```
 yarn test --coverage
 ```
-4. To install the relevant databases, you'll need to be able to access the sequelize JS package via the command line: 
+4. Create a role for the test database 
+5. Create a database using the following PSQL command: 
+```
+CREATE DATABASE chronicle_db;
+```
+6. To update the databases, you'll need to be able to access the sequelize JS package via the command line: 
 ```
 npm install -g sequelize-cli
 ```
