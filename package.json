@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "test": "jest"
   },
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -14,5 +17,10 @@
     "morgan": "~1.9.1",
     "nodemon": "^2.0.12",
     "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "jest": "^27.1.0",
+    "jest-puppeteer": "^5.0.4",
+    "puppeteer": "^9.1.1"
   }
 }
