@@ -1,15 +1,26 @@
 {
+  "name": "chronicle-content-tracker",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
+    "start": "node ./bin/www",
     "test": "jest"
   },
-  "devDependencies": {
-    "jest": "^27.1.0"
+  "jest": {
+    "preset": "jest-puppeteer"
   },
-  "name": "chronicle-content-tracker",
-  "version": "1.0.0",
-  "description": "Final project for makers.",
-  "main": "index.js",
-  "repository": "https://github.com/karimabuseer/chronicle-content-tracker.git",
-  "author": "karimabuseer <karimabuseer@gmail.com>",
-  "license": "MIT"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.12",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "jest": "^27.1.0",
+    "jest-puppeteer": "^5.0.4",
+    "puppeteer": "^9.1.1"
+  }
 }
