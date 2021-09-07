@@ -54,4 +54,8 @@ yarn test
 ```
 yarn test --coverage
 ```
+4. To install the relevant databases, you'll need to be able to access the sequelize JS package via the command line: 
+```
+npm install -g sequelize-cli
+```
 
