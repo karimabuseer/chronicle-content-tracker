@@ -1,5 +1,5 @@
 exports.books = function(req, res, next) {
-  res.render('books', { 
+  res.render('books/index', { 
     title: 'Books List' 
   });
 };
