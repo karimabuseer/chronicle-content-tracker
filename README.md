@@ -45,7 +45,11 @@ I want to be able to make an account and login.
 To setup the project:
 
 1. Install Node using Homebrew (macOS/Linux) or via the [Node.js website!](https://nodejs.org/en/download/) (Windows)
-2. Navigate to the local project directory
+2. Navigate to the local project directory and install dependencies: 
+```
+npm install
+```
+
 3. Tests are run using the Jest testing suite. To run tests:
 ``` 
 yarn test
@@ -68,6 +72,6 @@ CREATE DATABASE chronicle_test;
 
 6. To update the databases, you'll need to be able to access the sequelize JS package via the command line: 
 ```
-sequelize:db migrate
+sequelize db:migrate
 ```
 
