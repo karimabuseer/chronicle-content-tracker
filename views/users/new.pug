@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1= title
+  p #{title}
+  form(action="#")
+      div.label 
+      div.username
+        input(type="text" placeholder="username")
+      div.email
+        input(type="email" placeholder="email")
+      div.password
+        input(type="password" placeholder="password")
+      div.confirmPassword
+        input(type="password" placeholder="password")
+      button(type="button") Sign Up
+      p
+        | Already a member? 
+        break 
+        a(href="/session/new") Log In Here
