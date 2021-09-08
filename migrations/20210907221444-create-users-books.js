@@ -14,9 +14,6 @@ module.exports = {
       book_id: {
         type: Sequelize.INTEGER
       },
-      encrypted_password: {
-        type: Sequelize.STRING
-      },
       status: {
         type: Sequelize.STRING
       },

@@ -54,13 +54,25 @@ yarn test
 ```
 yarn test --coverage
 ```
-4. Create a role for the test database 
-5. Create a database using the following PSQL command: 
+4. Create a role for the test database. Connect to psql and run the following commands:
 ```
-CREATE DATABASE chronicle_db;
+CREATE ROLE noodle_eater WITH LOGIN PASSWORD 'r@m3n!';
 ```
+
+```
+ALTER ROLE noodle_eater CREATEDB;
+```
+
+5. Create a database plus a test user to make changes to it using the following PSQL commands: 
+```
+CREATE DATABASE chronicle_development;
+CREATE DATABASE chronicle_test;
+```
+
+
 6. To update the databases, you'll need to be able to access the sequelize JS package via the command line: 
+
 ```
-npm install -g sequelize-cli
+sequelize:db migrate
 ```
 
