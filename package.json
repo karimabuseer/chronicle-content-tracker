@@ -22,8 +22,10 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "bcrypt": "^5.0.1",
     "jest": "^27.1.0",
     "jest-puppeteer": "^5.0.4",
+    "passport": "^0.4.1",
     "puppeteer": "^9.1.1"
   }
 }

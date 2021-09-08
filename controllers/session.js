@@ -9,9 +9,11 @@ module.exports = {
 
   verify (req, res, next) {
     const current_user = user.findOne({ where: { email: req.body.email } });
-    console.log('we are in verify')
-    console.log(req.body)
     return current_user
-    .then(current_user => console.log(current_user))
+    .then(current_user => current_user.dataValues)
+    .then((userData) => res.render('users/new', {
+      title: userData.id, 
+      email: userData.email
+    })) 
   }
 };

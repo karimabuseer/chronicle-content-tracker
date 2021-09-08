@@ -19,10 +19,4 @@ module.exports = {
     }))
     .catch((error) => res.status(400).send(error));
   },
-  
-  login (req, res) {
-    console.log("Wag1 4 login")
-    const current_user = user.findOne({ where: { email: req.params.email } });
-    console.log(current_user)
-  }
 };
