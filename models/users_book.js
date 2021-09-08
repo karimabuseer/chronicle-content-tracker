@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       users_books.belongsTo(models.books, {
         foreignKey: 'id',
-        as: 'books_id'
+        as: 'book_id'
     }
   };
   users_book.init({
