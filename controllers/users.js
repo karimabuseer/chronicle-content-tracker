@@ -7,7 +7,7 @@ module.exports = {
   })
   },
 
-  add (req, res) {
+  add (req, res, next) {
   console.log('we are in add')
   return user
     .create({
@@ -15,8 +15,9 @@ module.exports = {
       email: req.body.email,
       encrypted_password: req.body.password
     })
-    .then((user) => res.status(201).send(user))
+    .then((user) => res.render('users/new', { 
+      title: 'Sign Up'
+    }))
     .catch((error) => res.status(400).send(error));
-    res.send({redirect: '/'});
   },
 };
