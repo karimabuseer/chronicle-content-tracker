@@ -1,4 +1,4 @@
-describe('Chronicle homepage', () => {
+describe('Book list page', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:3000/books');
   });
