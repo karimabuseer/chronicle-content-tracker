@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "noodle_eater",
+    "password": "r@m3n!",
+    "database": "chronicle_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "noodle_eater",
+    "password": "r@m3n!",
+    "database": "chronicle_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "noodle_eater",
+    "password": "r@m3n!",
+    "database": "chronicle_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
