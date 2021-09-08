@@ -1,6 +1,21 @@
 extends ../layout
 
 block content
-
-  p hi #{email}
-  
+  h1= title
+  p #{title}
+  if email
+    p hi #{email}
+  else 
+    form(action='/users', method='POST')
+        div.label 
+        div.username
+          input(type="text", name="username", placeholder="username")
+        div.email
+          input(type="email", name="email", placeholder="email")
+        div.password
+          input(type="password", name="password", placeholder="password")
+        button(type="submit", value="Submit" ) Sign Up
+        p
+          | Already a member? 
+          break 
+          a(href="/session/") Log In Here 

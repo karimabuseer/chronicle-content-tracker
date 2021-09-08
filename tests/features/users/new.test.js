@@ -6,4 +6,8 @@ describe('Sign Up Page', () => {
   it('should have a sign up form', async() => {
     await expect(page.title()).resolves.toMatch('Sign Up');
   })
+
+  it('sign up then login should direct you to email', async() => {
+    
+  })
 })
