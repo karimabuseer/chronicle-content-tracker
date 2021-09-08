@@ -3,3 +3,10 @@ extends ../layout
 block content
   h1= title
   p Welcome to #{title}
+  form(action='#')
+    div.label
+    div.title
+      input(type="text" placeholder="title")
+    div.author
+      input(type="text" placeholder="author")
+    button(type="button") Add Book
