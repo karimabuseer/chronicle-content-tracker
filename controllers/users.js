@@ -1,13 +1,12 @@
 const user = require('../models').user;
 module.exports = { 
-  sign_up (req, res, next) {
-    console.log('hello')
+  sign_up (req, res) {
   res.render('users/new', { 
     title: 'Sign Up'
   })
   },
 
-  add (req, res, next) {
+  add (req, res) {
   console.log('we are in add')
   return user
     .create({
@@ -20,4 +19,10 @@ module.exports = {
     }))
     .catch((error) => res.status(400).send(error));
   },
+  
+  login (req, res) {
+    console.log("Wag1 4 login")
+    const current_user = user.findOne({ where: { email: req.params.email } });
+    console.log(current_user)
+  }
 };

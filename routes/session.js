@@ -5,6 +5,7 @@ var session = require('../controllers/session.js')
 
 /* GET session listing. */
 router.get('/', session.session);
-router.get('/new', session.session);
+/* POST session */
+router.post('/new', session.session);
 
 module.exports = router;

@@ -70,7 +70,12 @@ CREATE DATABASE chronicle_development;
 CREATE DATABASE chronicle_test;
 ```
 
-6. To update the databases, you'll need to be able to access the sequelize JS package via the command line: 
+6. To update the databases, you'll need to install sequelize
+
+```
+npm install -g sequelize-cli
+```
+and then access sequelize JS package via the command line: 
 ```
 sequelize db:migrate
 ```
