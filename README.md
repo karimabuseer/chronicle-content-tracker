@@ -48,6 +48,7 @@ To setup the project:
 2. Navigate to the local project directory and install dependencies: 
 ```
 npm install
+npm install -g --save sequelize-cli
 ```
 
 3. Tests are run using the Jest testing suite. To run tests:
