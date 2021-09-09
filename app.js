@@ -43,11 +43,13 @@ app.use(function(err, req, res, next) {
 });
 
 // empties database when server starts
-const db = require("./models");
-db.sequelize.sync({ force: true }).then(() => {
+if (process.env.NODE_ENV === "test") {
+  const db = require("./models");
+  db.sequelize.sync({ force: true }).then(() => {
 
-  console.log("Drop and re-sync db.");
+    console.log("Drop and re-sync db.");
   
   });
+};
 
 module.exports = app;
