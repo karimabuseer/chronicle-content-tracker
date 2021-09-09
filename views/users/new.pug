@@ -6,7 +6,7 @@ block content
   if email
     p hi #{email}
   else 
-    form(action='/users', method='POST')
+    form(name='sign-up-form', action='/users', method='POST')
         div.label 
         div.username
           input(type="text", name="username", placeholder="username")
@@ -14,7 +14,7 @@ block content
           input(type="email", name="email", placeholder="email")
         div.password
           input(type="password", name="password", placeholder="password")
-        button(type="submit", value="Submit" ) Sign Up
+        button(type="submit", value="Submit" id='sign-up-button') Sign Up
         p
           | Already a member? 
           break 
