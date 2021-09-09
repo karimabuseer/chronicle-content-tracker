@@ -13,17 +13,15 @@ module.exports = function(passport, user) {
       console.log(password)
       
       User.findOne({ where: { email: username } }).then(function (user) {
-        user = user.dataValues
         console.log(user)
         if (!user) {
-          console.log('Incorrect username')
-          return done(null, false, { message: 'Incorrect username.' });
+          return done(null, user, { message: 'Incorrect username.' });
         }
+        user = user.dataValues
         if (user.encrypted_password != password) {
-          console.log('incorrect password')
-          return done(null, false, { message: 'Incorrect password.' });
+          user = user.dataValues
+          return done(null, user, { message: 'Incorrect password.' });
         }
-        ('everyone is happy')
         return done(null, user);
       });
       

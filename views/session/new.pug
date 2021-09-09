@@ -3,7 +3,7 @@ extends ../layout
 block content
   h1= title
   p #{title}
-  form(action="/session/new", method="POST")
+  form(action="/session/", method="POST")
       div.label 
       div.email
         input(type="email", name ='email', placeholder="email")

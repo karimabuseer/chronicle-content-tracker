@@ -7,17 +7,17 @@ const passport = require('passport');
 
 
 /* GET session listing. */
-router.get('/', session.login);
+router.get('/new', session.login);
 /* POST session */
-router.post('/new', passport.authenticate('local'), function (req, res) { res.redirect('/users/' + req.user.user_name);});
-
-// app.post('/login',
-// passport.authenticate('local'),
-// function(req, res) {
-//   // If this function gets called, authentication was successful.
-//   // `req.user` contains the authenticated user.
-//   res.redirect('/users/' + req.user.username);
-// });
+router.post('/', 
+  passport.authenticate('local'), 
+    function (req, res) {
+      if (req.user) {
+        res.redirect('/users/' + req.user.user_name)
+      } else {
+        return res.redirect('/session/new')
+      }
+    } );
 
 module.exports = router;
 
