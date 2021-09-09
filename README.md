@@ -74,5 +74,6 @@ CREATE DATABASE chronicle_test;
 6. To update the databases, you'll need to be able to access the sequelize JS package via the command line: 
 ```
 sequelize db:migrate
+sequelize db:migrate --env test
 ```
 
