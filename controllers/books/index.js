@@ -1,6 +1,6 @@
 const book = require('../../models').book;
 
-exports.books = function(req, res, next) {
+exports.books = function(res) {
   return book
     .findAll()
     .then( (books) => {

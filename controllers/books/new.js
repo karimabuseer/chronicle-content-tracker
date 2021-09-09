@@ -1,6 +1,6 @@
 const book = require('../../models').book;
 module.exports = { 
-  add_book (req, res, next) {
+  add_book (res) {
     res.render('books/new', { 
       title: 'Add Book'
   })
