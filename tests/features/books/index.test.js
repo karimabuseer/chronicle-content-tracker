@@ -4,6 +4,6 @@ describe('Book list page', () => {
   });
 
   it('should be titled "Books List"', async () => {
-    await expect(page.title()).resolves.toMatch('Books List');
+    await expect(page.title()).resolves.toMatch('Book List');
   });
 });

@@ -3,10 +3,10 @@ extends ../layout
 block content
   h1= title
   p Welcome to #{title}
-  form(action='/books/add' method='POST')
+  form(name="new_book" action='/books/add' method='POST')
     div.label
     div.title
       input(name="title" type="text" placeholder="Title")
     div.author
       input(name="author" type="text" placeholder="Author")
-    button(type="submit" value="submit") Add Book
+    button(id="add_book" type="submit" value="submit") Add Book

@@ -3,7 +3,6 @@ const book = require('../../models').book;
 exports.books = function(req, res, next) {
   return book
     .findAll()
-    // .then( (books) => console.log(books))
     .then( (books) => {
       const bookList = [];
       books.forEach( (book) => {
