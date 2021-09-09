@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  a(href="/books/new") Add Book
+  h1= title
+  p Welcome to #{title}
+
+  list(class='booklist')
+    ul(class='book')
+      each book in bookList
+        div author
+        div(class='author') #{book.book_author}
+        div title
+        div(class='title') #{book.book_title}

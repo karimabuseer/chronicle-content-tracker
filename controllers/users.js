@@ -1,4 +1,4 @@
-exports.users = function(req, res, next) {
+exports.users = function(res) {
   res.render('users/new', { 
     title: 'Sign Up' 
   });

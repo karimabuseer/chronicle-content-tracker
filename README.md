@@ -48,6 +48,7 @@ To setup the project:
 2. Navigate to the local project directory and install dependencies: 
 ```
 npm install
+npm install -g --save sequelize-cli
 ```
 
 3. Tests are run using the Jest testing suite. To run tests:
@@ -73,5 +74,6 @@ CREATE DATABASE chronicle_test;
 6. To update the databases, you'll need to be able to access the sequelize JS package via the command line: 
 ```
 sequelize db:migrate
+sequelize db:migrate --env test
 ```
 
