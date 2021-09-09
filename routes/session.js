@@ -9,18 +9,15 @@ const passport = require('passport');
 /* GET session listing. */
 router.get('/', session.login);
 /* POST session */
-router.post('/new', passport.authenticate('local', { successRedirect: '/success',
-            failureRedirect: '/session/new'}));
+router.post('/new', passport.authenticate('local'), function (req, res) { res.redirect('/users/' + req.user.user_name);});
 
-          //   router.post("/new",
-          //   function(req,res,next){
-          //     passport.authenticate("local", function(err, user, info){
-           
-               
-           
-          //    })(req,res,next); 
-          //  })
- 
+// app.post('/login',
+// passport.authenticate('local'),
+// function(req, res) {
+//   // If this function gets called, authentication was successful.
+//   // `req.user` contains the authenticated user.
+//   res.redirect('/users/' + req.user.username);
+// });
 
 module.exports = router;
 
