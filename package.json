@@ -13,17 +13,21 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.12",
+    "passport-local": "^1.0.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "pug": "^3.0.2",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "bcrypt": "^5.0.1",
     "jest": "^27.1.0",
     "jest-puppeteer": "^5.0.4",
+    "passport": "^0.4.1",
     "puppeteer": "^9.1.1"
   }
 }
