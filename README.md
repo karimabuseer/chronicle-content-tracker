@@ -75,8 +75,7 @@ ALTER ROLE noodle_eater CREATEDB;
 
 5. Create a database plus a test user to make changes to it using the following PSQL commands: 
 ```
-CREATE DATABASE chronicle_development;
-CREATE DATABASE chronicle_test;
+sequelize db:create
 ```
 
 6. To update the databases, you'll need to install sequelize
