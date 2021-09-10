@@ -61,7 +61,7 @@ NODE_ENV=test npm start
 then run
 
 ``` 
-yarn test
+npm test
 ```
 *To run tests with a coverage report*
 ```
