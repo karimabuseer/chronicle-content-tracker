@@ -1,8 +1,17 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-a {
-  color: #00B7FF;
+.navbar_button {
+  border: 1px solid #C79658;
+  border-radius: 8px;
+  background-color: #363A50;
+  margin: 5px;
+}
+
+.navbar_button_text {
+  color: #FFFFFF;
+  font-family: "American Typewriter";
+  font-size: small;
 }
