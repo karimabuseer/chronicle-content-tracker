@@ -15,3 +15,8 @@ body {
   font-family: "American Typewriter";
   font-size: small;
 }
+
+.jumbotron {
+  margin: 0px;
+  padding: 0px;
+}
