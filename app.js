@@ -46,9 +46,7 @@ app.use(function(err, req, res, next) {
 if (process.env.NODE_ENV === "test") {
   const db = require("./models");
   db.sequelize.sync({ force: true }).then(() => {
-
     console.log("Drop and re-sync db.");
-  
   });
 };
 
