@@ -9,12 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_name: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.STRING
       },
       email: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.STRING
       },
       encrypted_password: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.STRING
       },
       createdAt: {
