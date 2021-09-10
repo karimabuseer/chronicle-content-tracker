@@ -10,8 +10,7 @@ module.exports = {
   remove (req, res) {
     return book
       .destroy({
-        book_title: req.body.title,
-        book_author: req.body.author
+        WHERE: { id:req.body.id}
       })
       .then(() => res.redirect("/books"))
       .catch((error) => res.status(400).send(error));
