@@ -52,8 +52,16 @@ npm install -g --save sequelize-cli
 ```
 
 3. Tests are run using the Jest testing suite. To run tests:
+
+Start the server in the test environment:
+```
+NODE_ENV=test npm start
+```
+
+then run
+
 ``` 
-yarn test
+npm test
 ```
 *To run tests with a coverage report*
 ```
@@ -80,5 +88,16 @@ and then access sequelize JS package via the command line:
 ```
 sequelize db:migrate
 sequelize db:migrate --env test
+```
+
+7. To run the project in the developer environment:
+```
+npm start
+```
+
+or after setting it to the test environment:
+
+```
+NODE_ENV=development npm start
 ```
 
