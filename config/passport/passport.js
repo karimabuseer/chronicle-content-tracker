@@ -13,7 +13,6 @@ module.exports = function(passport, user) {
       console.log(password)
       
       User.findOne({ where: { email: username } }).then(function (user) {
-        console.log(user)
         if (!user) {
           return done(null, user, { message: 'Incorrect username.' });
         }

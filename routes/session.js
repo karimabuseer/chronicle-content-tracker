@@ -10,14 +10,17 @@ const passport = require('passport');
 router.get('/new', session.login);
 /* POST session */
 router.post('/', 
-  passport.authenticate('local'), 
-    function (req, res) {
-      if (req.user) {
-        res.redirect('/users/' + req.user.user_name)
-      } else {
-        return res.redirect('/session/new')
-      }
-    } );
-
+  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/users/new' } 
+    ));
+/* might need this later - working user being passed into cookies, but login fail goes to passport's
+default 401 error page 
+function (req, res) {
+  if (req.user) {
+    console.log('the session is' + req.session.passport.user)
+    res.redirect('/users/' + req.user.user_name)
+  } else {
+    return res.redirect('/session/new')
+  }
+} */
 module.exports = router;
 
