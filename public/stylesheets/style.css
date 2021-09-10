@@ -42,3 +42,8 @@ body {
   color: #FFFFFF;
   font-size: small;
 }
+
+.footer a {
+  padding-inline: 10vh;
+  color: #FFFFFF;
+}
