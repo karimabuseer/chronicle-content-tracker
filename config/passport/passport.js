@@ -18,7 +18,6 @@ module.exports = function(passport, user) {
         }
         user = user.dataValues
         if (user.encrypted_password != password) {
-          user = user.dataValues
           return done(null, user, { message: 'Incorrect password.' });
         }
         return done(null, user);
