@@ -5,12 +5,9 @@ block content
   h1= title
   p Welcome to #{title}
 
-  ul(class='booklist')
-    each book in bookList
-      li(class='book')
-        div Author: #{book.book_author}
-        div Title: #{book.book_title}
-        br
-      
-        
-        
+  ul(class='bookList')
+      each book in bookList
+        li(class='book')
+          div(class='author') Author: #{book.book_author}
+          div(class='title') Title: #{book.book_title}
+          br
