@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var session = require('../controllers/session.js')
-// var passport = require('../config/passport/passport')
 const passport = require('passport');
 
 
