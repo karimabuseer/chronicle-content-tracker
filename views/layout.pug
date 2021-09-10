@@ -12,22 +12,24 @@ html(lang="en")
       a.navbar-brand(href="/")
         img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle' style='height:50px;')
       ul.navbar-nav.mr-auto
-        li.navbar-item.navbar_button.d-flex.justify-content-center.align-items-center
-          a.nav-link.navbar_button_text(href="/books") Books
-        li.navbar-item.navbar_button.d-flex.justify-content-center.align-items-center
-          a.nav-link.navbar_button_text(href="/films") Films
-        li.navbar-item.navbar_button.d-flex.justify-content-center.align-items-center
-          a.nav-link.navbar_button_text(href="/games") Games
+        li.navbar-item.d-flex.justify-content-center.align-items-center
+          a.nav-link.btn(href="/books") Books
+        li.navbar-item.d-flex.justify-content-center.align-items-center
+          a.nav-link.btn(href="/films") Films
+        li.navbar-item.d-flex.justify-content-center.align-items-center
+          a.nav-link.btn(href="/games") Games
       ul.navbar-nav
-        li.navbar-item.navbar_button.d-flex.justify-content-center.align-items-center
-          a.nav-link.navbar_button_text(href="/users/new") Sign Up
-        li.navbar-item.navbar_button.d-flex.justify-content-center.align-items-center
-          a.nav-link.navbar_button_text(href="/session/new") Log In
+        li.navbar-item.d-flex.justify-content-center.align-items-center
+          a.nav-link.btn(href="/users/new") Sign Up
+        li.navbar-item.d-flex.justify-content-center.align-items-center
+          a.nav-link.btn(href="/session/new") Log In
     
-    main.container(role="main" style="padding: 30px;")     
-      form.form-inline.my-2.my-lg-0
-        input.form-control.mr-sm-2(type="text" placeholder="Input...")
-        button.btn.btn-primary.my-2.my-sm-0(type="submit") OK
+    main.container(role="main")
+      div.input-group.mb-3
+        input(type="search" class="form-control" placeholder="Find your next story..." aria-label="Search" aria-describedby="search-addon")
+        div.input-group-append
+          button.btn(type="button") Search
+         
       block content
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")

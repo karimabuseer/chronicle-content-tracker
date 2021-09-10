@@ -1,22 +1,33 @@
 body {
   padding-left: 50px;
   padding-right: 50px;
+  font-family: "American Typewriter";
 }
 
-.navbar_button {
+.btn {
   border: 1px solid #C79658;
   border-radius: 8px;
   background-color: #363A50;
+  color: #FFFFFF;
+  font-size: small;
+}
+
+.navbar .btn {
   margin: 5px;
 }
 
-.navbar_button_text {
+.search_bar_text {
+  color: #363A50;
+}
+
+.search_bar_button {
+  border: 1px solid #C79658;
+  border-radius: 8px;
+  background-color: #363A50;
   color: #FFFFFF;
-  font-family: "American Typewriter";
   font-size: small;
 }
 
 .jumbotron {
-  margin: 0px;
   padding: 0px;
 }
