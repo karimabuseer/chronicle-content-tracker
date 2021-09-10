@@ -1,6 +1,6 @@
 body {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 10vw;
+  padding-right: 10vw;
   font-family: "American Typewriter";
 }
 
@@ -30,4 +30,15 @@ body {
 
 .jumbotron {
   padding: 0px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 80vw;
+  height: 50px;
+  line-height: 50px;
+  background-color: #363A50;
+  color: #FFFFFF;
+  font-size: small;
 }
