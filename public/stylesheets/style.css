@@ -49,8 +49,7 @@ body {
 }
 
 .sign-up-wrapper {
-  box-sizing: border-box;
-  padding: 10vw;
+  padding: 5vw;
   margin: 20vh;
   border: 2px solid #AC8352;
   border-radius: 8px;
@@ -63,4 +62,14 @@ body {
 
 .sign-up-wrapper .form-control {
   margin: 10px;
+}
+
+.sign-up-wrapper p {
+  color: #FFFFFF;
+  font-size: small;
+}
+
+.sign-up-wrapper a {
+  color: #FFFFFF;
+  font-size: small;
 }

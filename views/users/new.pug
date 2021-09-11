@@ -3,7 +3,7 @@ extends ../layout
 block content
   .sign-up-wrapper.d-flex.flex-column.justify-content-center.align-items-center
     h1 #{title}
-    .input-group.mb-3
+    .input-group.mb-3.d-flex.flex-column.justify-content-center.align-items-center
       form(name='sign-up-form', action='/users', method='POST')
           .label 
           .username
@@ -13,8 +13,7 @@ block content
           .password
             input.form-control(required type="password", name="password", placeholder="password")
           button.btn.btn-block.form-control(type="submit", value="Submit" id='sign-up-button') Sign Up
-    
-  p
-    | Already a member? 
-    break 
-    a(href="/session/new") Log In Here 
+    p
+      | Already a member? 
+      break 
+      a(href="/session/new") Log In Here 
