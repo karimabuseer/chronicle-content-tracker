@@ -48,7 +48,7 @@ body {
   color: #FFFFFF;
 }
 
-.sign-up-wrapper {
+.registration-wrapper {
   padding: 5vw;
   margin: 20vh;
   border: 2px solid #AC8352;
@@ -56,20 +56,20 @@ body {
   background-color: #272A3A;
 }
 
-.sign-up-wrapper h1 {
+.registration-wrapper h1 {
   color: #AC8352;
 }
 
-.sign-up-wrapper .form-control {
+.registration-wrapper .form-control {
   margin: 10px;
 }
 
-.sign-up-wrapper p {
+.registration-wrapper p {
   color: #FFFFFF;
   font-size: small;
 }
 
-.sign-up-wrapper a {
+.registration-wrapper a {
   color: #FFFFFF;
   font-size: small;
 }

@@ -1,16 +1,31 @@
 extends ../layout
 
 block content
-  h1= title
-  p #{title}
-  form(action="/session/", method="POST")
-      div.label 
-      div.email
-        input(type="email", name ='email', placeholder="email")
-      div.password
-        input(type="password", name='password', placeholder="password")
-      button(type="submit" input="Submit") Log In
-      p
-        | Don't have an account? 
-        break 
-        a(href="/users/new") Sign Up Here
+  //- h1= title
+  //- p #{title}
+  //- form(action="/session/", method="POST")
+  //-     div.label 
+  //-     div.email
+  //-       input(type="email", name ='email', placeholder="email")
+  //-     div.password
+  //-       input(type="password", name='password', placeholder="password")
+  //-     button(type="submit" input="Submit") Log In
+  //-     p
+  //-       | Don't have an account? 
+  //-       break 
+  //-       a(href="/users/new") Sign Up Here
+  
+  .registration-wrapper.d-flex.flex-column.justify-content-center.align-items-center
+    h1 #{title}
+    .input-group.mb-3.d-flex.flex-column.justify-content-center.align-items-center
+      form(name='log-in-form', action='/session', method='POST')
+          .label 
+          .email
+            input.form-control(required type="email", name="email", placeholder="email")
+          .password
+            input.form-control(required type="password", name="password", placeholder="password")
+          button.btn.btn-block.form-control(type="submit", value="Submit" id='log-in-button') Log In
+    p
+      | Don't have an account? 
+      break 
+      a(href="/users/new") Sign Up Here 
