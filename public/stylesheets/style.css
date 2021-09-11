@@ -47,3 +47,20 @@ body {
   padding-inline: 10vh;
   color: #FFFFFF;
 }
+
+.sign-up-wrapper {
+  box-sizing: border-box;
+  padding: 10vw;
+  margin: 20vh;
+  border: 2px solid #AC8352;
+  border-radius: 8px;
+  background-color: #272A3A;
+}
+
+.sign-up-wrapper h1 {
+  color: #AC8352;
+}
+
+.sign-up-wrapper .form-control {
+  margin: 10px;
+}
