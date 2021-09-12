@@ -32,6 +32,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/session', sessionRouter);
 app.use('/books', booksRouter);
+app.use(express.static('javascripts'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
