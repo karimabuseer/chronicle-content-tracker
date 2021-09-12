@@ -1,7 +1,6 @@
 const usersBook = require('../../models').users_book;
 module.exports = { 
   add (req, res) {
-    console.log(req.session)
     return usersBook
     .create({
         user_id: req.session.passport.user,
