@@ -12,7 +12,7 @@ module.exports = {
       book_title: req.body.title,
       book_author: req.body.author
     })
-    .then(() => res.redirect("/books"))
+    .then((book) => res.redirect(`/usersBooks/${book.id}`))
     .catch((error) => res.status(400).send(error));
   },
 };

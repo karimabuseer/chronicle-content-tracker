@@ -7,7 +7,6 @@ module.exports = {
   },
 
   add (req, res) {
-  console.log('we are in add')
   return user
     .create({
       user_name: req.body.username,
