@@ -1,5 +1,5 @@
 exports.movies = function(req, res) {
-  res.render('movies', { 
+  res.render('movies/new', { 
     title: 'Movies' 
   });
 };

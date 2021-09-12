@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var movies = require('../controllers/movies.js')
-console.log('hello')
-console.log(movies)
+var movieList = require('../controllers/movies/new.js')
+var addMovie = require('../controllers/movies/new.js')
+
 /* GET  to movies homepage. */
-router.get('/movies', movies.movies);
+router.get('/', movieList.movies);
+
+router.get('/new', addMovie.movies);
 
 module.exports = router;
