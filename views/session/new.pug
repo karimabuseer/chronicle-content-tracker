@@ -7,10 +7,10 @@ block content
       form(class='log-in-form form', action='/session', method='POST')
           .label 
           .email
-            input.form-control(required type="email", name="email", placeholder="email")
+            input.form-control(required type="email", name="email", placeholder="email", autocomplete='off')
           .password
             input.form-control(required type="password", name="password", placeholder="password")
-          button.btn.btn-block.form-control(type="submit", value="Submit" id='log-in-button' onClick='clearForm()') Log In
+          button.btn.btn-block.form-control(type="submit", value="Submit" id='log-in-button') Log In
     p
       | Don't have an account? 
       break 
