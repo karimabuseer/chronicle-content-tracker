@@ -7,12 +7,18 @@ module.exports = {
   })
   },
 
-  remove (req, res) {
-    return book
-      .destroy({
-        WHERE: { id:req.body.id}
-      })
-      .then(() => res.redirect("/books"))
-      .catch((error) => res.status(400).send(error));
-    },
+  // remove (req, res) {
+
+  //   return book
+  //     .destroy({
+  //       WHERE: { id:req.body.id}
+  //     })
+
+  //   book.destroy({
+  //     where: { title: req.dataValue.title }
+  // })
+
+  //     .then(() => res.redirect("/books"))
+  //     .catch((error) => res.status(400).send(error));
+  //   },
 }
