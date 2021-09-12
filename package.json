@@ -21,6 +21,7 @@
     "jquery": "^3.6.0",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
@@ -32,7 +33,6 @@
     "bcrypt": "^5.0.1",
     "jest": "^27.1.0",
     "jest-puppeteer": "^5.0.4",
-    "passport": "^0.4.1",
     "puppeteer": "^9.1.1"
   }
 }
