@@ -3,7 +3,7 @@ extends ../layout
 block content
   h1= title
   p #{title}
-  form(class='sign-up-form', action='/users', method='POST')
+  form(class='sign-up-form form', action='/users', method='POST')
       div.label 
       div.username
         input(type="text", name="username", placeholder="username")
@@ -15,9 +15,4 @@ block content
       p
         | Already a member? 
         break 
-        a(href="/session/new") Log In Here 
-
-  script.
-    var clearForm = () => {
-      document.querySelector(".sign-up-form").reset()
-    };
+        a(href="/session/new") Log In Here
