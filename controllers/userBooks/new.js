@@ -7,7 +7,7 @@ module.exports = {
         book_id: req.params.id,
         status: 'Unread'
       })
-    .then(() => res.redirect("/"))
+    .then(() => res.redirect(`/users/${req.session.passport.user}/books`))
     .catch((error) => res.status(400).send(error));
   }
 };

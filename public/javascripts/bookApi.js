@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // const api_key = process.env.GOOGLE_BOOKS_API
   // console.log('Script loaded')
   // console.log(api_key)
-  $(".anim").hide();
   const searchButton = document.getElementById('book-search-submit');
   const form = document.getElementById('book-search-form');
   const list = document.getElementById('book-list-results');
@@ -15,21 +14,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const titleTag = document.createElement("h3")
     const authorTag = document.createElement("h4")
     const descriptionTag = document.createElement("p")
-    const addButton = document.createElement("button")
+    const addButton = document.createElement("input")
+    const bookForm = document.createElement("form")
+
+    const titleAdd = document.createElement("input")
+    titleAdd.setAttribute("name", "title")
+    titleAdd.setAttribute("type", "hidden")
+    titleAdd.setAttribute("value", bookResult.volumeInfo.title)
+    bookForm.appendChild(titleAdd)
+
+    const authorAdd = document.createElement("input")
+    authorAdd.setAttribute("type", "hidden")
+    authorAdd.setAttribute("name", "author")
+    authorAdd.setAttribute("value", bookResult.volumeInfo.authors[0])
+    bookForm.appendChild(authorAdd)
+
+    bookForm.appendChild(addButton)
+    bookForm.setAttribute("method", "post")
+
     addButton.classList.add('button')
-    addButton.type = "submit"
-    addButton.input = "Submit"
-    addButton.innerHTML = "Add book"
+    addButton.setAttribute("type", "submit")
+    addButton.innerHTML = ("Add book")
+
+
     imgTag.src = bookResult.volumeInfo.imageLinks.thumbnail;
     imgTag.alt = `${bookResult.volumeInfo.title} cover image`
     titleTag.innerHTML = bookResult.volumeInfo.title;
     authorTag.innerHTML = bookResult.volumeInfo.authors[0]
     descriptionTag.innerHTML = bookResult.volumeInfo.description
     newDiv.appendChild(imgTag);
-    newDiv.appendChild(titleTag)
-    newDiv.appendChild(authorTag)
-    newDiv.appendChild(descriptionTag)
-    newDiv.appendChild(addButton)
+    newDiv.appendChild(titleTag);
+    newDiv.appendChild(authorTag);
+    newDiv.appendChild(descriptionTag);
+    newDiv.appendChild(bookForm);
     list.appendChild(newDiv);
   })
 
