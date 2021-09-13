@@ -1,9 +1,15 @@
 const book = require('../../models').book;
-module.exports = { 
+module.exports = {
+
   add_book (req, res, next) {
-    res.render('books/new', { 
-      title: 'Add Book'
-  })
+    try { 
+      res.render('books/new', {
+        user_id: req.session.passport.user, 
+        title: 'Add Book'
+      })
+    } catch { 
+      res.redirect('/session/new')
+    }
   },
 
   add (req, res) {
