@@ -1,7 +1,4 @@
 const usersBook = require('../../models').users_book;
-const book = require('../../models').books;
-const user = require('../../models').user;
-
 
 exports.books = function(req, res, next) {
   return usersBook
