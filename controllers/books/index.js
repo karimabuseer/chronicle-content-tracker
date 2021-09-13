@@ -1,6 +1,7 @@
 const usersBook = require('../../models').users_book;
 
 exports.books = function(req, res, next) {
+  console.log(process.env.GOOGLE_BOOKS_API    )
   res.render('books/new')
   // return usersBook
   //   .findAll( {
