@@ -10,4 +10,6 @@ router.get('/new', addBook.add_book);
 
 router.post('/add', addBook.add);
 
+router.post('/add', addBook.delete);
+
 module.exports = router;

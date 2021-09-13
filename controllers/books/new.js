@@ -1,4 +1,5 @@
 const book = require('../../models').book;
+const users_book = require('../../models').users_book;
 module.exports = { 
   add_book (req, res, next) {
     res.render('books/new', { 
@@ -14,5 +15,19 @@ module.exports = {
     })
     .then(() => res.redirect("/books"))
     .catch((error) => res.status(400).send(error));
+  },
+
+  delete(req, res) {
+    console.log(req.params)
+    return users_book
+      .findByPk(req.params.book_id)
+      
+      .then(users_book => {
+        return users_book
+          .destroy()
+          .then(() => res.redirect("/books"))
+          .catch((error) => res.status(400).send(error));
+      })
+      .catch((error) => res.status(400).send(error));
   },
 };
