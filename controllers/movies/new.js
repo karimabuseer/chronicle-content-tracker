@@ -2,7 +2,7 @@ const movie = require('../../models').movie;
 module.exports = { 
   add_movie (req, res, next) {
     res.render('movies/new', { 
-      title: 'Add Book'
+      title: 'Add Movie'
   })
   },
 
