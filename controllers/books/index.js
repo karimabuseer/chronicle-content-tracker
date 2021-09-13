@@ -17,6 +17,6 @@ try {
     .then( (userBookArray) => res.render( "books/index", {userBookList: userBookArray, title: "Book List"}))
   }
   catch {
-    res.render('/session/new')
+    res.redirect('/session/new')
   }
 };
