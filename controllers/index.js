@@ -11,7 +11,9 @@ exports.index = function(req, res, next) {
   })
   }
   catch {
-    res.redirect('/session/new' )
+    res.render('landing', {
+      title: 'Chronicle'
+    })
   }
 };
 
