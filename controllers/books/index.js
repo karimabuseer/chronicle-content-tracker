@@ -1,7 +1,7 @@
 const usersBook = require('../../models').users_book;
 
 exports.books = function(req, res, next) {
-  res.render()
+  res.render('books/new')
   // return usersBook
   //   .findAll( {
   //     where: { user_id: req.session.passport.user },

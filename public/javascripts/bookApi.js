@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log('I have been clicked')
     event.preventDefault();
     const query = document.getElementById('book-search-query').value;
-    fetch('http://example.com/movies.json')
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=flowers&key=${process.env.GOOGLE_BOOKS_API}`)
   .then(response => response.json())
   .then(data => console.log(data));
   });
