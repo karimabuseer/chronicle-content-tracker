@@ -7,11 +7,11 @@ block content
 
   list(class='booklist')
     ul(class='book')
-      each book in bookList
-        div(class='author') Author: #{book.book.book_title}
-        div(class='title') Title: #{book.book.book_author}
-        div(class='rating') Rating: #{book.rating}
-        div(class='status') Status: #{book.status}
+      each user_book in userBookList
+        div(class='author') Author: #{user_book.book.book_title}
+        div(class='title') Title: #{user_book.book.book_author}
+        div(class='rating') Rating: #{user_book.rating}
+        div(class='status') Status: #{user_book.status}
         br
 
 
