@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const titleTag = document.createElement("h3")
     const authorTag = document.createElement("h4")
     const descriptionTag = document.createElement("p")
+    const addButton = document.createElement("button")
+    addButton.classList.add('button')
+    addButton.type = "submit"
+    addButton.input = "Submit"
+    addButton.innerHTML = "Add book"
     imgTag.src = bookResult.volumeInfo.imageLinks.thumbnail;
     imgTag.alt = `${bookResult.volumeInfo.title} cover image`
     titleTag.innerHTML = bookResult.volumeInfo.title;
@@ -24,6 +29,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     newDiv.appendChild(titleTag)
     newDiv.appendChild(authorTag)
     newDiv.appendChild(descriptionTag)
+    newDiv.appendChild(addButton)
     list.appendChild(newDiv);
   })
 
