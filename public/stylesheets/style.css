@@ -1,8 +1,75 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  font-family: "American Typewriter";
 }
 
-a {
-  color: #00B7FF;
+.btn {
+  border: 1px solid #C79658;
+  border-radius: 8px;
+  background-color: #363A50;
+  color: #FFFFFF;
+  font-size: small;
+}
+
+.navbar .btn {
+  margin: 5px;
+}
+
+.search_bar_text {
+  color: #363A50;
+}
+
+.search_bar_button {
+  border: 1px solid #C79658;
+  border-radius: 8px;
+  background-color: #363A50;
+  color: #FFFFFF;
+  font-size: small;
+}
+
+.jumbotron {
+  padding: 0px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 80vw;
+  height: 50px;
+  line-height: 50px;
+  background-color: #363A50;
+  color: #FFFFFF;
+  font-size: small;
+}
+
+.footer a {
+  padding-inline: 10vh;
+  color: #FFFFFF;
+}
+
+.registration-wrapper {
+  padding: 5vw;
+  margin: 20vh;
+  border: 2px solid #AC8352;
+  border-radius: 8px;
+  background-color: #272A3A;
+}
+
+.registration-wrapper h1 {
+  color: #AC8352;
+}
+
+.registration-wrapper .form-control {
+  margin: 10px;
+}
+
+.registration-wrapper p {
+  color: #FFFFFF;
+  font-size: small;
+}
+
+.registration-wrapper a {
+  color: #FFFFFF;
+  font-size: small;
 }
