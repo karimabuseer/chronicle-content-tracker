@@ -5,7 +5,8 @@ module.exports = {
     .create({
         user_id: req.session.passport.user,
         book_id: req.params.id,
-        status: 'Unread'
+        status: 'Unread',
+        rating: 'No rating'
       })
     .then(() => res.redirect("/"))
     .catch((error) => res.status(400).send(error));
