@@ -3,7 +3,7 @@ extends ../layout
 block content
   h1= title
   p #{title}
-  form(name='sign-up-form', action='/users', method='POST')
+  form(name='sign-up-form', action='/session', method='POST')
       div.label 
       div.username
         input(type="text", name="username", placeholder="username")
