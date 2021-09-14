@@ -1,9 +1,10 @@
 describe('Log In Page', () => {
-  beforeAll(async () => {
+  beforeEach(async () => {
     await page.goto('http://localhost:3000/session/new');
   });
 
   it('should have a log in form', async() => {
-    await expect(page.title()).resolves.toMatch('Log In');
+    const title =  await page.$eval('h1', el => el.innerText);
+    expect(title).toMatch('Log In');
   })
 })

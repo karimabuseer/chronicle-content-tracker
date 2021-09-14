@@ -1,11 +1,14 @@
 describe('Sign Up', () => {
-  beforeAll(async () => {
+  beforeEach(async () => {
     await page.goto('http://localhost:3000/users/new');
   });
 
   it('should have a sign up form', async() => {
-    const title =  await page.$eval('h1', el => el.innerText);
-    expect(title).toMatch('Sign Up');
+    await expect(page).toMatchElement(".title", { text: 'Sign Up' });
+    await expect(page).toMatchElement(".username");
+    await expect(page).toMatchElement(".email");
+    await expect(page).toMatchElement(".password");
+    await expect(page).toMatchElement("#sign-up-button", { text: 'Sign Up' });
   })
 
   it('sign up should direct you to home page', async() => {
