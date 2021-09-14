@@ -12,5 +12,6 @@ block content
         div(class='author') #{book.book_author}
         div title
         div(class='title') #{book.book_title}
-        button(id="delete_book" type="submit" value="delete") Delete
+        form(name="delete_book" action='/books/new' method='POST')
+          button(id="delete_book" type="submit" value="delete") Delete
         br
