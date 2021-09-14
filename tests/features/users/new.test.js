@@ -1,4 +1,4 @@
-describe('Sign Up Page', () => {
+describe('Sign Up', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:3000/users/new');
   });
