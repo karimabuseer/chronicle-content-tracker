@@ -2,9 +2,14 @@ const user = require('../models').user;
 
 module.exports = { 
   login (req, res, next) {
-    res.render('session/new', { 
-      title: 'Log In' 
-    });
+    try {
+      req.session.passport.user;
+      res.redirect('/')
+    } catch { 
+      res.render('session/new', { 
+        title: 'Log In'
+      })
+    };
   }, 
 
   verify (req, res, next) {
