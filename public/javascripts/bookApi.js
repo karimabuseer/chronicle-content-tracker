@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const searchButton = document.getElementById('book-search-submit');
   const list = document.getElementById('book-list-results');
 
-  let createBookCardFormElement = ((bookAttributes, bookForm) => {
-    for( j = 0; j < bookAttributes.length; j++) {
+  let createBookCardFormElement = ((key, value) => {
       const element = document.createElement("input")
       element.setAttribute("type", "hidden")
-      element.setAttribute("name", bookAttributes.keys(j))
-      element.setAttribute("value", bookAttributes[bookAttributes.keys(j)])
-      bookForm.appendChild(element)
-    }
+      element.setAttribute("name", key)
+      element.setAttribute("value", value)
+      return element
   })
 
   let createBookCard = ((bookResult) => { 
@@ -29,8 +27,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       "isbn": bookResult.volumeInfo.industryIdentifiers[0].identifier
     };
 
-    createBookCardFormElement(bookAttributes, bookForm);
-  
+    for( j = 0; j < Object.keys(bookAttributes).length; j++) {
+      let key = Object.keys(bookAttributes)[j]
+      let value = bookAttributes[key]
+      let element = createBookCardFormElement(key, value);
+      bookForm.appendChild(element);
+    }
+    
     bookForm.appendChild(addButton)
     bookForm.setAttribute("method", "post")
 
