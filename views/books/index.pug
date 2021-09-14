@@ -1,20 +1,12 @@
 extends ../layout
 
 block content
-  a(href="/books/") Add Book
-  h1(class='title')= title
+  script(type="text/javascript" src='/javascripts/bookApi.js')
+  h1= title
   p Welcome to #{title}
-
-  list(class='booklist')
-    ul(class='book')
-      each user_book in userBookList
-        div(class='author') Author: #{user_book.book.book_title}
-        div(class='title') Title: #{user_book.book.book_author}
-        div(class='rating') Rating: #{user_book.rating}
-        div(class='status') Status: #{user_book.status}
-        br
-
-
-
-                 
-
+  form(id="book-search-form" name="new_book" action='/books/add' method='POST')
+    div.label
+    div.title
+      input(class="search-bar" id="book-search-query" name="book-search" type="text" placeholder="Search for a book...")
+      input(type ="submit" id="book-search-submit" class="book-search-submit")
+  div(id='book-list-results')

@@ -13,5 +13,5 @@ exports.books = function(req, res, next) {
       })
       return userBookArray
     })
-    .then( (userBookArray) => res.render( "books/index", {userBookList: userBookArray, title: "Book List"}));
+    .then( (userBookArray) => res.render( "userBooks/index", {userBookList: userBookArray, title: "Book List"}));
 };

@@ -13,7 +13,6 @@ var sessionRouter = require('./routes/session');
 var booksRouter = require('./routes/books');
 var usersBooksRouter = require('./routes/usersBooks');
 
-
 var app = express();
 
 // view engine setup
@@ -30,14 +29,12 @@ require('./config/passport/passport')(passport);
 app.use(passport.session());
 app.use(session({ resave: true ,secret: '123456' , saveUninitialized: true}));
 
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/session', sessionRouter);
 app.use('/books', booksRouter);
 app.use('/usersBooks', usersBooksRouter);
 app.use(express.static('public'));
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
