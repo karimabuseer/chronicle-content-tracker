@@ -12,10 +12,8 @@ block content
         div(class='title') Title: #{user_book.book.book_author}
         div(class='rating') Rating: #{user_book.rating}
         div(class='status') Status: #{user_book.status}
-        button(id="delete_book" type="submit" value="Delete") Delete Book
+        form(name="delete_book" action='/usersBooks/delete' method='POST')
+          input(type="hidden" value=user_book.id name="book_id")
+          input(type="hidden" name="_method" value="DELETE")
+          button(id="delete_book" type="submit" value="Delete") Delete Book
         br
-
-
-
-                 
-
