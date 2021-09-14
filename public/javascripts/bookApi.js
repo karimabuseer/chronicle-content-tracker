@@ -2,6 +2,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const searchButton = document.getElementById('book-search-submit');
   const list = document.getElementById('book-list-results');
 
+  let createBookCardFormElement = ((bookAttributes, bookForm) => {
+    for( j = 0; j < bookAttributes.length; j++) {
+      const element = document.createElement("input")
+      element.setAttribute("type", "hidden")
+      element.setAttribute("name", bookAttributes.keys(j))
+      element.setAttribute("value", bookAttributes[bookAttributes.keys(j)])
+      bookForm.appendChild(element)
+    }
+  })
+
   let createBookCard = ((bookResult) => { 
     const newDiv = document.createElement("div");
     newDiv.classList.add("book-card");
@@ -11,35 +21,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const descriptionTag = document.createElement("p")
     const addButton = document.createElement("button")
     const bookForm = document.createElement("form")
+    const bookAttributes = {
+      "title": bookResult.volumeInfo.title, 
+      "author": bookResult.volumeInfo.authors[0], 
+      "description": bookResult.volumeInfo.description, 
+      "image": bookResult.volumeInfo.imageLinks.thumbnail, 
+      "isbn": bookResult.volumeInfo.industryIdentifiers[0].identifier
+    };
 
-    const titleAdd = document.createElement("input")
-    titleAdd.setAttribute("name", "title")
-    titleAdd.setAttribute("type", "hidden")
-    titleAdd.setAttribute("value", bookResult.volumeInfo.title)
-    bookForm.appendChild(titleAdd)
+    createBookCardFormElement(bookAttributes, bookForm);
+  
+    bookForm.appendChild(addButton)
+    bookForm.setAttribute("method", "post")
 
-    const authorAdd = document.createElement("input")
-    authorAdd.setAttribute("type", "hidden")
-    authorAdd.setAttribute("name", "author")
-    authorAdd.setAttribute("value", bookResult.volumeInfo.authors[0])
-    bookForm.appendChild(authorAdd)
-
-    const imageAdd = document.createElement("input")
-    imageAdd.setAttribute("type", "hidden")
-    imageAdd.setAttribute("name", "image")
-    imageAdd.setAttribute("value", bookResult.volumeInfo.imageLinks.thumbnail)
-    bookForm.appendChild(imageAdd)
-
-    const isbnAdd = document.createElement("input")
-    isbnAdd.setAttribute("type", "hidden")
-    isbnAdd.setAttribute("name", "isbn")
-    isbnAdd.setAttribute("value", bookResult.volumeInfo.industryIdentifiers[0].identifier)
-    bookForm.appendChild(isbnAdd)
-
-    bookForm.setAttribute("method", "POST")
-    addButton.classList.add('btn')
-    addButton.class = ('book-search-submit')
-    addButton.id = (bookResult.volumeInfo.industryIdentifiers[0].identifier)
+    addButton.classList.add('button')
     addButton.setAttribute("type", "submit")
     addButton.innerHTML = ("Add book")
     bookForm.appendChild(addButton)
@@ -59,6 +54,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   searchButton.addEventListener( 'click', (event) => {
     event.preventDefault();
+    list.innerHTML = "";
     const query = document.getElementById('book-search-query').value;
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
     .then(response => response.json())
