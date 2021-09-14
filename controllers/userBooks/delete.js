@@ -1,11 +1,12 @@
 const usersBook = require('../../models').users_book;
-module.exports = { 
+module.exports = {
   delete (req, res) {
+    console.log(req.params)
     return usersBook
     .destroy({
       where: {
         user_id: req.session.passport.user,
-        book_id: req.params.id,
+        id: req.body.book_id,
         }
       })
     .then(() => res.redirect("/"))

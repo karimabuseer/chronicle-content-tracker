@@ -5,6 +5,6 @@ var deleteUserBook = require('../controllers/userBooks/delete')
 
 router.get('/:id', addUserBook.add);
 
-router.delete('/:id', deleteUserBook.delete);
+router.post('/delete', deleteUserBook.delete);
 
 module.exports = router;
