@@ -1,6 +1,6 @@
 describe('Book list page', () => {
   beforeAll(async () => {
-    await page.goto('http://localhost:3000/sessions/new');
+    await page.goto('http://localhost:3000/users/new');
     await expect(page).toFillForm('form[name="sign-up-form"]', {
       username: 'username',
       email: 'email@email.com',
@@ -9,9 +9,9 @@ describe('Book list page', () => {
     await page.goto('http://localhost:3000/books');
   });
 
-  it('should be titled "Books List"', async () => {
+  it('should be titled "Books Finder"', async () => {
     const title =  await page.$eval('.title', el => el.innerText);
-    expect(title).toMatch('Book List');
+    expect(title).toMatch('Book Finder');
   });
 
   it('should be redirect you to the log in page if you are not logged in', async () => {
