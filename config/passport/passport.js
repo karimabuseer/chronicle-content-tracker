@@ -7,11 +7,7 @@ module.exports = function(passport, user) {
   passport.use(new LocalStrategy({ 
     usernameField: 'email',
     passwordField: 'password'},
-    function(username, password, done) {
-      console.log('we in local strat')
-      console.log(username)
-      console.log(password)
-      
+    function(username, password, done) { 
       User.findOne({ where: { email: username } }).then(function (user) {
         if (!user) {
           return done(null, user, { message: 'Incorrect username.' });

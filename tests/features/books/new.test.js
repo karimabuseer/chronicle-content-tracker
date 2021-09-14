@@ -3,6 +3,10 @@ describe('New book page', () => {
     await page.goto('http://localhost:3000/books/new');
   });
 
+  it('should be redirect you to the log in page if you are not logged in', async () => {
+    await expect(page.url()).toMatch('http://localhost:3000/session/new');
+  });
+
   it('should be titled "Add Book"', async () => {
     await expect(page.title()).resolves.toMatch('Add Book');
   });
