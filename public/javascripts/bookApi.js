@@ -29,13 +29,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
     authorAdd.setAttribute("value", bookResult.volumeInfo.authors[0])
     bookForm.appendChild(authorAdd)
 
+    const imageAdd = document.createElement("input")
+    imageAdd.setAttribute("type", "hidden")
+    imageAdd.setAttribute("name", "image")
+    imageAdd.setAttribute("value", bookResult.volumeInfo.imageLinks.thumbnail)
+    bookForm.appendChild(imageAdd)
+
+    const isbnAdd = document.createElement("input")
+    isbnAdd.setAttribute("type", "hidden")
+    isbnAdd.setAttribute("name", "isbn")
+    isbnAdd.setAttribute("value", bookResult.volumeInfo.industryIdentifiers[0].identifier)
+    bookForm.appendChild(isbnAdd)
+
+
     bookForm.appendChild(addButton)
     bookForm.setAttribute("method", "post")
 
     addButton.classList.add('button')
     addButton.setAttribute("type", "submit")
     addButton.innerHTML = ("Add book")
-
 
     imgTag.src = bookResult.volumeInfo.imageLinks.thumbnail;
     imgTag.alt = `${bookResult.volumeInfo.title} cover image`
