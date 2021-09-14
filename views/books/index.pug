@@ -12,8 +12,23 @@ block content
         div(class='title') Title: #{user_book.book.book_author}
         div(class='rating') Rating: #{user_book.rating}
         div(class='status') Status: #{user_book.status}
+        
         form(name="delete_book" action='/usersBooks/delete' method='POST')
           input(type="hidden" value=user_book.id name="book_id")
           input(type="hidden" name="_method" value="DELETE")
           button(id="delete_book" type="submit" value="Delete") Delete Book
+        
+        form(name="update_book" action='/usersBooks/update' method='POST')
+          input(type="hidden" value=user_book.id name="book_id")
+          button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown")
+          ul.dropdown-menu
+            li
+              //a(href="#") Want To Read
+              input.status( name="status" value="Want to read" type="submit")
+            li
+              //a(href="#") Reading
+              input.status( name="status" value="Reading" type="submit")
+            li
+              //a(href="#") Read
+              input.status( name="status" value="Read" type="submit") 
         br
