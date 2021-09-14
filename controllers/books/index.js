@@ -1,3 +1,5 @@
+const usersBook = require('../../models').users_book;
+
 exports.books = function(req, res, next) {
 
 try { 
@@ -7,6 +9,7 @@ try {
       include: 'book'
      })
     .then((userBooks) => {
+      console.log(userBooks)
       const userBookArray = [];
       userBooks.forEach((userBook) => {
         userBookArray.push(userBook.dataValues)

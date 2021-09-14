@@ -1,5 +1,6 @@
-extends layout
+extends loggedInLayout
 block content
+  p Welcome back to Chronicle #{user}
   div.jumbotron
     img(src='/images/bookhero.png' alt='Banner with logo and books' style='max-width: 100%;')
-  p Struggling to remember what books you want to read? Not anymore! Sign up and you'll be able to create a list of the books you want to read, are reading, or have finished!
+    
