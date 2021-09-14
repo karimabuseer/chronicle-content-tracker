@@ -1,22 +1,17 @@
-exports.books = function(req, res, next) {
+const usersBook = require('../../models').users_book;
 
-try { 
+exports.books = function(req, res, next) {
   return usersBook
     .findAll( {
       where: { user_id: req.session.passport.user },
       include: 'book'
      })
     .then((userBooks) => {
-      console.log(userBooks)
       const userBookArray = [];
       userBooks.forEach((userBook) => {
         userBookArray.push(userBook.dataValues)
       })
       return userBookArray
     })
-    .then( (userBookArray) => res.render( "books/index", {userBookList: userBookArray, title: "Book List"}))
-  }
-  catch {
-    res.redirect('/session/new')
-  }
+    .then( (userBookArray) => res.render( "userBooks/index", {userBookList: userBookArray, title: "Book List"}));
 };

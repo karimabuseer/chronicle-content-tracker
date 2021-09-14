@@ -8,7 +8,7 @@ module.exports = {
         status: 'Unread',
         rating: 'No rating'
       })
-    .then(() => res.redirect("/"))
+    .then(() => res.redirect(`/users/${req.session.passport.user}/books`))
     .catch((error) => res.status(400).send(error));
   }
 };
