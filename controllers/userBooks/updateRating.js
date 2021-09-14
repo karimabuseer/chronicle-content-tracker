@@ -1,14 +1,15 @@
 const usersBook = require('../../models').users_book;
 module.exports = {
-  updateStatus (req, res) { 
+    
+  updateRating (req, res) {
     return usersBook
     .update(
-      { status: req.body.status },
+      { rating: req.body.rating },
       { where: {
         user_id: req.session.passport.user,
         id: req.body.book_id }
       })
-    .then(() => console.log(req.body.status), res.redirect("/books"))
+    .then(() => res.redirect("/books"))
     .catch((error) => res.status(400).send(error));
     }
 };
