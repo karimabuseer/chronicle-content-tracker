@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1= title
+  a(href="/movies/new") Add Movie
+  
+  p My #{title}:
+
+  list(class='movielist')
+    ul(class='movie')
+      each movie in movieList
+        div Title:
+        div(class='title') #{movie.movie_title}
+        div Director:
+        div(class='director') #{movie.movie_director}
+        br

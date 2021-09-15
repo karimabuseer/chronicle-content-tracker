@@ -8,4 +8,6 @@ router.get('/', bookList.books);
 
 router.post('/', addBook.add);
 
+router.post('/add', addBook.delete);
+
 module.exports = router;
