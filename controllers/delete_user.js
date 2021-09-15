@@ -1,10 +1,8 @@
 const user = require('../models').user;
 module.exports = {
-  deletePage (req, res) {
-    res.render("users/delete")
-  },
 
   deleteUser (req, res) {
+    console.log('I am in delete page')
     return user
     .destroy({
       where: {
