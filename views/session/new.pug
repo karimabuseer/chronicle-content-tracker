@@ -1,7 +1,6 @@
 extends ../layout
 
 block content
-<<<<<<< HEAD
   .registration-wrapper.d-flex.flex-column.justify-content-center.align-items-center
     h1 #{title}
     .input-group.mb-3.d-flex.flex-column.justify-content-center.align-items-center
@@ -16,18 +15,3 @@ block content
       | Don't have an account? 
       break 
       a(href="/users/new") Sign Up Here 
-=======
-  h1= title
-  p #{title}
-  form(action="/session", method="POST")
-      div.label 
-      div.email
-        input(type="email", name ='email', placeholder="email")
-      div.password
-        input(type="password", name='password', placeholder="password")
-      button(type="submit" input="Submit") Log In
-      p
-        | Don't have an account? 
-        break 
-        a(href="/users/new") Sign Up Here
->>>>>>> 09bde01... Made login buttin redirect to homepage
