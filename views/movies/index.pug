@@ -1,16 +1,12 @@
 extends ../layout
 
 block content
-  h1= title
-  a(href="/movies/new") Add Movie
-  
-  p My #{title}:
+  script(type="text/javascript" src='/javascripts/movieApi.js')
 
-  list(class='movielist')
-    ul(class='movie')
-      each movie in movieList
-        div Title:
-        div(class='title') #{movie.movie_title}
-        div Director:
-        div(class='director') #{movie.movie_director}
-        br
+  form(id="movie-search-form" name="new_book" action='/movie/add' method='POST')
+    .input-group.mb-3
+      input(type="search" class="form-control" id="movie-search-query" placeholder="Find your next journey..." aria-label="Search" aria-describedby="search-addon")
+      .input-group-append
+        button.btn(type="submit" id="movie-search-submit" class="movie-search-submit") Search
+
+  div(id='movie-list-results')

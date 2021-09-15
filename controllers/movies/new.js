@@ -1,7 +1,7 @@
 const movie = require('../../models').movie;
 module.exports = { 
   add_movie (req, res, next) {
-    res.render('movies/new', { 
+    res.render('movies/index', { 
       title: 'Add Movie'
   })
   },
