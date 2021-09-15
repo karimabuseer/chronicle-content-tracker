@@ -16,7 +16,7 @@ try {
       })
       return userBookArray
     })
-    .then( (userBookArray) => res.render( "books/index", {userBookList: userBookArray, title: "Book List"}))
+    .then( (userBookArray) => res.render( "books/index", {userBookList: userBookArray, title: "Book Search"}))
   }
   catch {
     res.redirect('/session/new')
