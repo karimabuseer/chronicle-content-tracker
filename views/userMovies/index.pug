@@ -12,11 +12,11 @@ block content
         br
         div(class='cover_art')
           img(src=user_movie.movie.cover_art)
-        //- if (user_book.rating )
-        //-   div(class='rating') Rating:#{user_book.rating}
-        //- else 
-        //-   div(class='rating') Rating: No Rating.
-        //- div(class='status') Status: #{user_book.status}
+        if (user_movie.rating )
+          div(class='rating') Rating:#{user_movie.rating}
+        else 
+          div(class='rating') Rating: No Rating.
+        div(class='status') Status: #{user_movie.status}
         
         //- form(name="delete_book" action='/usersBooks/delete' method='POST')
         //-   input(type="hidden" value=user_book.id name="book_id")
