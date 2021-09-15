@@ -7,8 +7,19 @@ module.exports = {
       res.redirect('/')
     } catch { 
       res.render('session/new', { 
-        title: 'Log In'
-      })
+        message: req.flash('error'),
+       title: 'Log In' 
+     })
     };
   }, 
+  
+  logout (req, res, next) {
+    return user
+    .findOne({ where: { email: req.body.email } })
+    .then(current_user => current_user.dataValues)
+    .then((userData) => res.render('users/new', {
+      title: userData.id, 
+      email: userData.email
+    })) 
+  }
 };

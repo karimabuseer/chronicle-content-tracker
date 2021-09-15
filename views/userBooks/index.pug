@@ -9,7 +9,10 @@ block content
       each user_book in userBookList
         div(class='author') Author: #{user_book.book.book_title}
         div(class='title') Title: #{user_book.book.book_author}
-        div(class='rating') Rating: #{user_book.rating}
+        if (user_book.rating )
+          div(class='rating') Rating:#{user_book.rating}
+        else 
+          div(class='rating') Rating: No Rating.
         div(class='status') Status: #{user_book.status}
         
         form(name="delete_book" action='/usersBooks/delete' method='POST')
