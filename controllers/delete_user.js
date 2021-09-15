@@ -1,5 +1,9 @@
 const user = require('../models').user;
 module.exports = {
+  deletePage (req, res) {
+    res.render("users/delete")
+  },
+
   deleteUser (req, res) {
     return user
     .destroy({

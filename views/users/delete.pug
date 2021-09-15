@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+    
+  h1 (Warning delete is instantaneous and cannot be undone!)
+    
+  form(name="delete_profile" action='/users/delete' method='POST')
+    input(type="hidden" name="_method" value="DELETE")
+    button(id="delete_user" type="submit" value="Delete") Delete Profile

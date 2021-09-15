@@ -7,10 +7,19 @@ module.exports = {
   },
 
   index (req, res) {
+    return user
+      .findOne({
+        where: {
+          id: req.session.passport.user
+        }
+      })
+      .then((user) => 
     res.render('users/index', { 
-      title: 'Profile',
-      user_id: req.session.passport.user
-  })
+      username: user.user_name,
+      user_id: user.id,
+      email: user.email
+    })
+  )
   },
 
   add (req, res) {
@@ -27,15 +36,13 @@ module.exports = {
   },
 
   updateUsername(req, res){
-    console.log(req.body.username)
-    console.log(req.session.passport.user)
     return user
     .update(
       {user_name: req.body.username },
       { where: {
         id: req.session.passport.user }
       })
-      .then(() => res.render('users/index'))
+      .then(() => res.redirect(`/users/${req.session.passport.user}`))
       .catch((error) => res.status(400).send(error));
     }
   };

@@ -2,17 +2,20 @@ extends ../layout
 
 block content
 
-    h1='User profile page here'
+    p Welcome, #{username}!
+    p Here you can update your user settings, or delete your account. 
     
-    form(name="delete_profile" action='/users/delete' method='POST')
-      input(type="hidden" name="_method" value="DELETE")
-      button(id="delete_user" type="submit" value="Delete") Delete Profile
+    form(action='/users/delete' method="GET")
+      button(type="submit") Delete Profile
+    a(href='/users/delete') New 
 
     form(name="update_username" action='/users/update' method='POST')
       input(type="text" name="username" placeholder="New name...")
       input(type="hidden" name="_method" value="PUT")
       button(type="submit") Update username
 
-    form(name="update_password" action='/users/update' method='POST')
-      button.username(type="submit" value=users name='password') Update password
+    form(name="update_password" action='/users/updateP' method='POST')
+      input(type="text" name="password" placeholder="New password...")
+      input(type="hidden" name="_method" value="PUT")
+      button(type="submit") Update password
       
