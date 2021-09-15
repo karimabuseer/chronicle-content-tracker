@@ -8,10 +8,10 @@ block content
     ul(class='book')
       each user_movie in userMovieList
         div(class='author') Title: #{user_movie.movie.movie_title}
-        div(class='title') Director: #{user_movie.movie.movie_director}
+        div(class='title') Release Date: #{user_movie.movie.release_date}
         br
-        //- div(class='cover_art')
-        //-   img(src=user_book.book.cover_art)
+        div(class='cover_art')
+          img(src=user_movie.movie.cover_art)
         //- if (user_book.rating )
         //-   div(class='rating') Rating:#{user_book.rating}
         //- else 
