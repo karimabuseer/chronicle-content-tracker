@@ -7,7 +7,8 @@ exports.index = function(req, res, next) {
   .then( (user) => {
     res.render('index', { 
       title: 'Chronicle',
-      user: user.dataValues
+      user: user.dataValues,
+      message: req.flash('success')
     })
   })
   }
