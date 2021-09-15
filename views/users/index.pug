@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+    h1='User profile page here'
+    
+    form(name="delete_profile" action='/users/delete' method='POST')
+      input(type="hidden" name="_method" value="DELETE")
+      button(id="delete_user" type="submit" value="Delete") Delete Profile
+
+    form(name="update_username" action='/users/update' method='POST')
+      button.username(type="submit" value=users name='username') Update username
+
+    form(name="update_password" action='/users/update' method='POST')
+      button.username(type="submit" value=users name='password') Update password
+      

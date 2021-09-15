@@ -6,8 +6,14 @@ module.exports = {
   })
   },
 
+  index (req, res) {
+    res.render('users/index', { 
+      title: 'Profile',
+      user_id: req.session.passport.user
+  })
+  },
+
   add (req, res) {
-  console.log('we are in add')
   return user
     .create({
       user_name: req.body.username,
@@ -19,4 +25,15 @@ module.exports = {
     }))
     .catch((error) => res.status(400).send(error));
   },
-};
+
+  updateUsername(req, res) {
+    return user
+    .update(
+      {user_name: req.body.username },
+      { where: {
+        user_id: req.session.passport.user }
+      })
+      .then(() => res.render('users/${user.id}'))
+      .catch((error) => res.status(400).send(error));
+    }
+  };
