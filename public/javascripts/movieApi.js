@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     movieForm.setAttribute("method", "POST")
     const movieAttributes = {
       "title": movieResult.title, 
-      "author": movieResult.release_date, 
-      "description":  movieResult.release_date, 
+      "releaseDate": movieResult.release_date, 
+      "description":  movieResult.overview, 
       "image": `https://image.tmdb.org/t/p/original/${movieResult.poster_path}`, 
     };
 
@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=38fbfe658e2293a5ff72803359f32c61&query=${query}`)
     .then(response => response.json())
     .then(data => { return data.results } )
-    .then(movieResults => { 
+    .then(movieResults => {
+      console.log(movieResults)
       for (i = 0; i < movieResults.length; i++ ) {
       createMovieCard(movieResults[i])
       }

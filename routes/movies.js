@@ -8,7 +8,7 @@ router.get('/', movieList.movies);
 
 router.get('/new', addMovie.add_movie);
 
-router.post('/add', addMovie.addMovie);
+router.post('/new', addMovie.addMovie);
 
 
 
