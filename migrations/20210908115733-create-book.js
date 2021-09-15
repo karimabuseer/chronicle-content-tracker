@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       book_isbn: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       publishing_date: {
         type: Sequelize.DATE

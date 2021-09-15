@@ -1,47 +1,54 @@
 extends ../layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .booklist-wrapper.d-flex.flex-column.justify-content-center.align-items-center
+    h1 My Booklist
+    
+    .booklist
+        each user_book in userBookList
+          .book.card.flex-row
+            
+            .img-wrapper
+              img.card-img-left(src= user_book.book.cover_art)
 
-  list(class='booklist')
-    ul(class='book')
-      each user_book in userBookList
-        div(class='author') Author: #{user_book.book.book_title}
-        div(class='title') Title: #{user_book.book.book_author}
-        div(class='rating') Rating: #{user_book.rating}
-        div(class='status') Status: #{user_book.status}
-        
-        form(name="delete_book" action='/usersBooks/delete' method='POST')
-          input(type="hidden" value=user_book.id name="book_id")
-          input(type="hidden" name="_method" value="DELETE")
-          button(id="delete_book" type="submit" value="Delete") Delete Book
-        
-        form(name="update_book" action='/usersBooks/update' method='POST')
-          input(type="hidden" value=user_book.id name="book_id")
-          button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Status
-          ul.dropdown-menu
-            li
-              input.status( name="status" value="Want to read" type="submit")
-            li
-              input.status( name="status" value="Reading" type="submit")
-            li
-              input.status( name="status" value="Read" type="submit") 
-            br
+            .card-body
+              .title.h5.h4-sm #{user_book.book.book_title}
+              .author.h6.h7-sm  by #{user_book.book.book_author}
+              
+              .status-wrapper.d-flex.justify-content-between 
+                .setting_name Status: 
+                  span.book_setting #{user_book.status}
+                form(name="update_book" action='/usersBooks/update' method='POST')
+                  input(type="hidden" value=user_book.id name="book_id")
+                  button.btn.dropdown-toggle(type="button", data-toggle="dropdown") Status
+                  .dropdown-menu
+                      input.dropdown-item( name="status" value="Want to read" type="submit")
+                      input.dropdown-item( name="status" value="Reading" type="submit")
+                      input.dropdown-item( name="status" value="Read" type="submit") 
+              
+              .rating-wrapper.d-flex.justify-content-between 
+                .setting_name Rating: 
+                  span.book_setting #{user_book.rating}
+                form(name="update_rating" action='/usersBooks/updateRating' method='POST')
+                  input(type="hidden" value=user_book.id name="book_id")
+                  button.btn.dropdown-toggle(type="button", data-toggle="dropdown") Rating
+                  .dropdown-menu
+                      input.dropdown-item( name="rating" value="1" type="submit")
+                      input.dropdown-item( name="rating" value="2" type="submit")
+                      input.dropdown-item( name="rating" value="3" type="submit")
+                      input.dropdown-item( name="rating" value="4" type="submit")
+                      input.dropdown-item( name="rating" value="5" type="submit")  
 
-        form(name="update_rating" action='/usersBooks/updateRating' method='POST')
-          input(type="hidden" value=user_book.id name="book_id")
-          button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Rating
-          ul.dropdown-menu
-            li
-              input.rating( name="rating" value="1" type="submit")
-            li
-              input.rating( name="rating" value="2" type="submit")
-            li
-              input.rating( name="rating" value="3" type="submit")
-            li
-              input.rating( name="rating" value="4" type="submit")
-            li
-              input.rating( name="rating" value="5" type="submit")  
-            br
+              .delete-wrapper
+              form(name="delete_book" action='/usersBooks/delete' method='POST')
+                input(type="hidden" value=user_book.id name="book_id")
+                input(type="hidden" name="_method" value="DELETE")
+                button.btn(id="delete_book" type="submit" value="Delete") Delete Book
+            
 
+//- <div class="card flex-row"><img class="card-img-left example-card-img-responsive" src="/postboot/assets/img/thumbnail.jpg"/>
+//-   <div class="card-body">
+//-     <h4 class="card-title h5 h4-sm">Left image</h4>
+//-     <p class="card-text">Example text</p>
+//-   </div>
+//- </div>

@@ -36,8 +36,8 @@ body {
   position: fixed;
   bottom: 0;
   width: 80vw;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 20px;
   background-color: #363A50;
   color: #FFFFFF;
   font-size: small;
@@ -81,5 +81,22 @@ body {
   border-radius: 8px;
   background-color: #272A3A;
   color:#FFFFFF;
-  
+}
+
+.container-fluid {
+  margin-bottom: 50px;
+}
+
+.booklist-wrapper h1 {
+  color: #AC8352;
+}
+
+.setting_name {
+  padding-right: 10px;
+  padding-bottom: 10px;
+  line-height: 30px;
+}
+
+.book_setting {
+  color: #AC8352;
 }
