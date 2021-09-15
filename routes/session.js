@@ -8,13 +8,18 @@ const passport = require('passport');
 /* GET session listing. */
 router.get('/new', session.login);
 router.get('/logout', function(req, res){
-  console.log(req.session.passport.user)
+  req.flash("flash", "You have succefully logged out")
   req.session.passport = undefined 
   res.redirect('/');
 });
 /* POST session */
 router.post('/', 
-  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/session/new', failureFlash: true } 
-    ));
+  passport.authenticate('local', { failureRedirect: '/session/new', failureFlash: true } 
+    ),
+    (req, res) => {
+      req.flash("success", `Succesfully logged in. Welcome back, ${req.user.user_name}!`);
+      res.redirect("/");
+    });
 module.exports = router;
 
+// successRedirect: '/' ,

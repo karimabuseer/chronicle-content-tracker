@@ -16,7 +16,7 @@ module.exports = function(passport, user) {
         if (user.encrypted_password != password) {
           return done(null, false, { message: 'Incorrect password.' });
         }
-        return done(null, user);
+        return done(null, user, { message: 'Succesfully logged in.' });
       });
       
     }
