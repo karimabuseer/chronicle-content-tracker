@@ -19,12 +19,14 @@ html(lang="en")
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/books") Books
             li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/films") Films
+              a.nav-link.btn(href="/movies") Movies
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/games") Games
 
         if user
           ul.navbar-nav
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/users/" + user.id + "/movies") My Movies
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/users/" + user.id + "/books") My Books
             li.navbar-item.d-flex.justify-content-center.align-items-center

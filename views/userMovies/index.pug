@@ -3,7 +3,7 @@ extends ../layout
 block content
   h1= title
   p Welcome to #{title}
-  a(href="/movies/new") Add Movie
+  a(href="/users/" + user_id+ "/movies") Add Movie
   list(class='booklist')
     ul(class='book')
       each user_movie in userMovieList
@@ -18,13 +18,13 @@ block content
           div(class='rating') Rating: No Rating.
         div(class='status') Status: #{user_movie.status}
         
-        form(name="delete_book" action='/usersBooks/delete' method='POST')
-          input(type="hidden" value=user_book.id name="book_id")
+        form(name="delete_movie" action='/usersMovies/delete' method='POST')
+          input(type="hidden" value=user_movie.id name="movie_id")
           input(type="hidden" name="_method" value="DELETE")
-          button(id="delete_book" type="submit" value="Delete") Delete Book
+          button(id="delete_movie" type="submit" value="Delete") Delete Movie
         
-        form(name="update_book" action='/usersBooks/update' method='POST')
-          input(type="hidden" value=user_book.id name="book_id")
+        form(name="update_movie" action='/usersMovies/update' method='POST')
+          input(type="hidden" value=user_movie.id name="movie_id")
           button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Status
           ul.dropdown-menu
             li
@@ -35,8 +35,8 @@ block content
               input.status( name="status" value="Read" type="submit") 
             br
 
-        form(name="update_rating" action='/usersBooks/updateRating' method='POST')
-          input(type="hidden" value=user_book.id name="book_id")
+        form(name="update_rating" action='/usersMovies/updateRating' method='POST')
+          input(type="hidden" value=user_movie.id name="movie_id")
           button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Rating
           ul.dropdown-menu
             li

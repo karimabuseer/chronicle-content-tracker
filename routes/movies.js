@@ -1,14 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var movieList = require('../controllers/userMovies/index.js')
 var addMovie = require('../controllers/movies/new.js')
 
 /* GET  to movies homepage. */
-router.get('/', movieList.movies);
+router.get('/', addMovie.add_movie);
 
 router.get('/new', addMovie.add_movie);
 
-router.post('/new', addMovie.addMovie);
+router.post('/', addMovie.addMovie);
 
 
 

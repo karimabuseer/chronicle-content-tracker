@@ -7,7 +7,7 @@ module.exports = {
         user_id: req.session.passport.user,
         movie_id: req.params.id
       })
-    .then(() => res.redirect(`/movies`))
+    .then(() => res.redirect(`/users/${req.session.passport.user}/movies`))
     .catch((error) => res.status(400).send(error));
   }
 };
