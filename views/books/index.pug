@@ -4,9 +4,11 @@ block content
   script(type="text/javascript" src='/javascripts/bookApi.js')
   h1= title
   p Welcome to #{title}
+
   form(id="book-search-form" name="new_book" action='/books/add' method='POST')
     div.label
     div.title
       input(class="search-bar" id="book-search-query" name="book-search" type="text" placeholder="Search for a book...")
       input(type ="submit" id="book-search-submit" class="book-search-submit")
   div(id='book-list-results')
+

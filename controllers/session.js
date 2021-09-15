@@ -12,7 +12,7 @@ module.exports = {
      })
     };
   }, 
-
+  
   logout (req, res, next) {
     return user
     .findOne({ where: { email: req.body.email } })
