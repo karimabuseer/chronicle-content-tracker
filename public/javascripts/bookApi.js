@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const titleTag = document.createElement("h3")
     const authorTag = document.createElement("h4")
     const descriptionTag = document.createElement("p")
-    const addButton = document.createElement("input")
+    const addButton = document.createElement("button")
     const bookForm = document.createElement("form")
     const bookAttributes = {
       "title": bookResult.volumeInfo.title, 
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     addButton.classList.add('button')
     addButton.setAttribute("type", "submit")
     addButton.innerHTML = ("Add book")
+    bookForm.appendChild(addButton)
 
     imgTag.src = bookResult.volumeInfo.imageLinks.thumbnail;
     imgTag.alt = `${bookResult.volumeInfo.title} cover image`

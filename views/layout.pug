@@ -12,24 +12,34 @@ html(lang="en")
       nav.navbar.navbar-expand-md
         a.navbar-brand(href="/")
           img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle' style='height:50px;')
+        
         ul.navbar-nav.mr-auto
-          li.navbar-item.d-flex.justify-content-center.align-items-center
-            a.nav-link.btn(href="/books") Books
-          li.navbar-item.d-flex.justify-content-center.align-items-center
-            a.nav-link.btn(href="/films") Films
-          li.navbar-item.d-flex.justify-content-center.align-items-center
-            a.nav-link.btn(href="/games") Games
-        ul.navbar-nav
-          li.navbar-item.d-flex.justify-content-center.align-items-center
-            a.nav-link.btn(href="/users/new") Sign Up
-          li.navbar-item.d-flex.justify-content-center.align-items-center
-            a.nav-link.btn(href="/session/new") Log In
-    if !user
+
+          if user
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/books") Books
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/films") Films
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/games") Games
+
+        if user
+          ul.navbar-nav
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/users/" + user.id + "/books") My Books
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/users/" + user.id) Profile
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/session/logout") Log Out
+
+        if !user
+          ul.navbar-nav
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/users/new") Sign Up
+            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/session/new") Log In
+    
     main.container-fluid(role="main")
-      .input-group.mb-3
-        input(type="search" class="form-control" placeholder="Find your next story..." aria-label="Search" aria-describedby="search-addon")
-        .input-group-append
-          button.btn(type="button") Search
       block content
     
     footer.footer

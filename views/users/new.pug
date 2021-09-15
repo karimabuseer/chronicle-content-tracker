@@ -3,19 +3,18 @@ extends ../layout
 block content
 
   .registration-wrapper.d-flex.flex-column.justify-content-center.align-items-center
-    h1 #{title}
+    h1.title #{title}
     .input-group.mb-3.d-flex.flex-column.justify-content-center.align-items-center
       form(name='sign-up-form', action='/users', method='POST')
           .label 
           .username
-            input.form-control(required type="text", name="username", placeholder="username")
+            input.form-control(required type="text", name="username", placeholder="username", autocomplete="username")
           .email
-            input.form-control(required type="email", name="email", placeholder="email")
+            input.form-control(required type="email", name="email", placeholder="email", autocomplete="email")
           .password
-            input.form-control(required type="password", name="password", placeholder="password")
+            input.form-control(required type="password", name="password", placeholder="password", autocomplete="new-password")
           button.btn.btn-block.form-control(type="submit", value="Submit" id='sign-up-button') Sign Up
     p
       | Already a member? 
       break 
       a(href="/session/new") Log In Here 
-

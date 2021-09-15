@@ -3,8 +3,6 @@ var router = express.Router();
 var session = require('../controllers/session.js')
 const passport = require('passport');
 
-
-
 /* GET session listing. */
 router.get('/new', session.login);
 router.get('/logout', function(req, res){
