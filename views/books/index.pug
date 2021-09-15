@@ -3,8 +3,6 @@ extends ../layout
 block content
   script(type="text/javascript" src='/javascripts/bookApi.js')
 
-  h1.title #{title}
-
   form(id="book-search-form" name="new_book" action='/books/add' method='POST')
     .input-group.mb-3
       input(type="search" class="form-control" id="book-search-query" placeholder="Find your next story..." aria-label="Search" aria-describedby="search-addon")
@@ -12,4 +10,3 @@ block content
         button.btn(type="submit" id="book-search-submit" class="book-search-submit") Search
 
   div(id='book-list-results')
-

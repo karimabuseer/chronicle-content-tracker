@@ -11,14 +11,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
   })
 
   let createBookCard = ((bookResult) => { 
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("book-card");
+    //create box
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("book-card");
+    bookCard.classList.add("card");
+    bookCard.classList.add("flex-row");
+
+    //create body
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    //create img
+    const imgWrapper = document.createElement("div");
     const imgTag = document.createElement("img")
+    imgTag.src = bookResult.volumeInfo.imageLinks.thumbnail;
+    imgTag.alt = `${bookResult.volumeInfo.title} cover image`
+    imgWrapper.appendChild(imgTag);
+    
+    //set title
     const titleTag = document.createElement("h3")
+    titleTag.innerHTML = bookResult.volumeInfo.title;
+
+    //set autor
     const authorTag = document.createElement("h4")
+    authorTag.innerHTML = bookResult.volumeInfo.authors[0]
+
+    //set description
     const descriptionTag = document.createElement("p")
-    const addButton = document.createElement("button")
+    descriptionTag.innerHTML = bookResult.volumeInfo.description
+
+    //create add form
     const bookForm = document.createElement("form")
+    bookForm.setAttribute("method", "POST")
     const bookAttributes = {
       "title": bookResult.volumeInfo.title, 
       "author": bookResult.volumeInfo.authors[0], 
@@ -34,25 +58,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
       bookForm.appendChild(element);
     }
     
-    bookForm.appendChild(addButton)
+    //create add form button
+    const addButton = document.createElement("button")
     bookForm.setAttribute("method", "POST")
-
     addButton.classList.add('button')
+    addButton.classList.add('btn')
     addButton.setAttribute("type", "submit")
     addButton.innerHTML = ("Add book")
     bookForm.appendChild(addButton)
 
-    imgTag.src = bookResult.volumeInfo.imageLinks.thumbnail;
-    imgTag.alt = `${bookResult.volumeInfo.title} cover image`
-    titleTag.innerHTML = bookResult.volumeInfo.title;
-    authorTag.innerHTML = bookResult.volumeInfo.authors[0]
-    descriptionTag.innerHTML = bookResult.volumeInfo.description
-    newDiv.appendChild(imgTag);
-    newDiv.appendChild(titleTag);
-    newDiv.appendChild(authorTag);
-    newDiv.appendChild(descriptionTag);
-    newDiv.appendChild(bookForm);
-    list.appendChild(newDiv);
+    bookCard.appendChild(imgWrapper);
+    cardBody.appendChild(titleTag);
+    cardBody.appendChild(authorTag);
+    cardBody.appendChild(descriptionTag);
+    cardBody.appendChild(bookForm);
+    bookCard.appendChild(cardBody);
+    list.appendChild(bookCard);
   })
 
   searchButton.addEventListener( 'click', (event) => {

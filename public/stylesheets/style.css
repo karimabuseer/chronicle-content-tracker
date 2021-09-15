@@ -73,3 +73,13 @@ body {
   color: #FFFFFF;
   font-size: small;
 }
+
+.card {
+  padding: 5vw;
+  margin-bottom: 10px;
+  border: 2px solid #AC8352;
+  border-radius: 8px;
+  background-color: #272A3A;
+  color:#FFFFFF;
+  
+}
