@@ -1,6 +1,7 @@
-extends loggedInLayout
+extends layout
+
 block content
-  p Welcome back to Chronicle #{user}
+  p Welcome back to Chronicle #{user.user_name}
   div.jumbotron
     img(src='/images/bookhero.png' alt='Banner with logo and books' style='max-width: 100%;')
     
