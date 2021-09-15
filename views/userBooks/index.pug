@@ -9,6 +9,8 @@ block content
       each user_book in userBookList
         div(class='author') Author: #{user_book.book.book_title}
         div(class='title') Title: #{user_book.book.book_author}
+        div(class='cover_art')
+          img(src=user_book.book.cover_art)
         if (user_book.rating )
           div(class='rating') Rating:#{user_book.rating}
         else 
