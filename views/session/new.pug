@@ -1,6 +1,9 @@
 extends ../layout
 
 block content
+  if (message.length > 0)
+    #alert
+      p= message
   .registration-wrapper.d-flex.flex-column.justify-content-center.align-items-center
     h1 #{title}
     .input-group.mb-3.d-flex.flex-column.justify-content-center.align-items-center

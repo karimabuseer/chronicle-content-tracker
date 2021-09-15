@@ -3,13 +3,14 @@ const user = require('../models').user;
 module.exports = { 
   login (req, res, next) {
     res.render('session/new', { 
+       message: req.flash('error'),
       title: 'Log In' 
     });
   }, 
 
-  verify (req, res, next) {
-    const current_user = user.findOne({ where: { email: req.body.email } });
-    return current_user
+  logout (req, res, next) {
+    return user
+    .findOne({ where: { email: req.body.email } })
     .then(current_user => current_user.dataValues)
     .then((userData) => res.render('users/new', {
       title: userData.id, 
