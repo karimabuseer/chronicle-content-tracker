@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-  // import dotenv from "dotenv";
-  // const api_key = process.env.GOOGLE_BOOKS_API
-  // console.log('Script loaded')
-  // console.log(api_key)
   const searchButton = document.getElementById('book-search-submit');
-  const form = document.getElementById('book-search-form');
   const list = document.getElementById('book-list-results');
 
   let createBookCard = ((bookResult) => { 
@@ -14,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const titleTag = document.createElement("h3")
     const authorTag = document.createElement("h4")
     const descriptionTag = document.createElement("p")
-    const addButton = document.createElement("input")
+    const addButton = document.createElement("button")
     const bookForm = document.createElement("form")
 
     const titleAdd = document.createElement("input")
@@ -41,13 +36,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     isbnAdd.setAttribute("value", bookResult.volumeInfo.industryIdentifiers[0].identifier)
     bookForm.appendChild(isbnAdd)
 
-
-    bookForm.appendChild(addButton)
     bookForm.setAttribute("method", "POST")
-
-    addButton.classList.add('button')
+    addButton.classList.add('btn')
+    addButton.class = ('book-search-submit')
+    addButton.id = (bookResult.volumeInfo.industryIdentifiers[0].identifier)
     addButton.setAttribute("type", "submit")
     addButton.innerHTML = ("Add book")
+    bookForm.appendChild(addButton)
 
     imgTag.src = bookResult.volumeInfo.imageLinks.thumbnail;
     imgTag.alt = `${bookResult.volumeInfo.title} cover image`
