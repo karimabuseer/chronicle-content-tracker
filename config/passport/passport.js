@@ -10,11 +10,11 @@ module.exports = function(passport, user) {
     function(username, password, done) { 
       User.findOne({ where: { email: username } }).then(function (user) {
         if (!user) {
-          return done(null, user, { message: 'Incorrect username.' });
+          return done(null, false, { message: 'Incorrect username.' });
         }
         user = user.dataValues
         if (user.encrypted_password != password) {
-          return done(null, user, { message: 'Incorrect password.' });
+          return done(null, false, { message: 'Incorrect password.' });
         }
         return done(null, user);
       });
