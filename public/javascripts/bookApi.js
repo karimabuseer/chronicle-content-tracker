@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     
     bookForm.appendChild(addButton)
-    bookForm.setAttribute("method", "post")
+    bookForm.setAttribute("method", "POST")
 
     addButton.classList.add('button')
     addButton.setAttribute("type", "submit")

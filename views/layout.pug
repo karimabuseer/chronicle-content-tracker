@@ -24,7 +24,7 @@ html(lang="en")
             a.nav-link.btn(href="/users/new") Sign Up
           li.navbar-item.d-flex.justify-content-center.align-items-center
             a.nav-link.btn(href="/session/new") Log In
-    
+    if !user
     main.container-fluid(role="main")
       .input-group.mb-3
         input(type="search" class="form-control" placeholder="Find your next story..." aria-label="Search" aria-describedby="search-addon")

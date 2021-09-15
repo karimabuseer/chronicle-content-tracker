@@ -4,9 +4,10 @@ exports.index = function(req, res, next) {
  try {
   return User
   .findOne({ where: { id: req.session.passport.user } })
-  .then( (user) => { 
+  .then( (user) => {
     res.render('index', { 
-      title: user.dataValues.user_name
+      user: user.dataValues.user_name,
+      message: req.flash('success')
     })
   })
   }
