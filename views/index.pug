@@ -1,8 +1,11 @@
+
 extends layout
 
 block content
-  a(href="/users/new") Sign Up
-  br
-  a(href="/session/new") Log In
-  h1= title
-  p Welcome to #{title}
+  if (message.length > 0)
+    #alert
+      p= message
+
+  div.jumbotron
+    img(src='/images/bookhero.png' alt='Banner with logo and books' style='max-width: 100%;')
+

@@ -52,8 +52,16 @@ npm install -g --save sequelize-cli
 ```
 
 3. Tests are run using the Jest testing suite. To run tests:
+
+Start the server in the test environment:
+```
+NODE_ENV=test npm start
+```
+
+then run
+
 ``` 
-yarn test
+npm test
 ```
 *To run tests with a coverage report*
 ```
@@ -67,13 +75,28 @@ ALTER ROLE noodle_eater CREATEDB;
 
 5. Create a database plus a test user to make changes to it using the following PSQL commands: 
 ```
-CREATE DATABASE chronicle_development;
-CREATE DATABASE chronicle_test;
+sequelize db:create
 ```
 
-6. To update the databases, you'll need to be able to access the sequelize JS package via the command line: 
+6. To update the databases, you'll need to install sequelize
+
+```
+npm install -g sequelize-cli
+```
+and then access sequelize JS package via the command line: 
 ```
 sequelize db:migrate
 sequelize db:migrate --env test
+```
+
+7. To run the project in the developer environment:
+```
+npm start
+```
+
+or after setting it to the test environment:
+
+```
+NODE_ENV=development npm start
 ```
 

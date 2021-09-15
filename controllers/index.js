@@ -1,5 +1,22 @@
+const User = require('../models').user;
+
 exports.index = function(req, res, next) {
-  res.render('index', { 
-    title: 'Noodle Gang' 
-  });
+ try {
+  return User
+  .findOne({ where: { id: req.session.passport.user } })
+  .then( (user) => {
+    res.render('index', { 
+      title: 'Chronicle',
+      user: user.dataValues,
+      message: req.flash('success')
+    })
+  })
+  }
+  catch {
+    res.render('landing', {
+      title: 'Chronicle'
+    })
+  }
 };
+
+
