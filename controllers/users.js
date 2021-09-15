@@ -26,14 +26,16 @@ module.exports = {
     .catch((error) => res.status(400).send(error));
   },
 
-  updateUsername(req, res) {
+  updateUsername(req, res){
+    console.log(req.body.username)
+    console.log(req.session.passport.user)
     return user
     .update(
       {user_name: req.body.username },
       { where: {
-        user_id: req.session.passport.user }
+        id: req.session.passport.user }
       })
-      .then(() => res.render('users/${user.id}'))
+      .then(() => res.render('users/index'))
       .catch((error) => res.status(400).send(error));
     }
   };

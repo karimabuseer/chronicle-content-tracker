@@ -9,7 +9,9 @@ block content
       button(id="delete_user" type="submit" value="Delete") Delete Profile
 
     form(name="update_username" action='/users/update' method='POST')
-      button.username(type="submit" value=users name='username') Update username
+      input(type="text" name="username" placeholder="New name...")
+      input(type="hidden" name="_method" value="PUT")
+      button(type="submit") Update username
 
     form(name="update_password" action='/users/update' method='POST')
       button.username(type="submit" value=users name='password') Update password

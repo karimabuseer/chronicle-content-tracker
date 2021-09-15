@@ -8,6 +8,6 @@ router.get('/new', users.sign_up);
 router.post('/', users.add)
 router.get('/:id', users.index)
 router.post('/delete', delete_user.deleteUser)
-router.put('/:id', users.updateUsername)
+router.post('/update', users.updateUsername)
 
 module.exports = router;
