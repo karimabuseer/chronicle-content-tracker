@@ -2,6 +2,7 @@ extends ../layout
 
 block content
   script(type="text/javascript" src='/javascripts/bookApi.js')
+
   h1.title #{title}
 
   form(id="book-search-form" name="new_book" action='/books/add' method='POST')
@@ -11,3 +12,4 @@ block content
         button.btn(type="submit" id="book-search-submit" class="book-search-submit") Search
 
   div(id='book-list-results')
+

@@ -5,4 +5,5 @@ exports.books = function(req, res, next) {
     title: 'Book Search',
     user: req.session.passport.user
   })
+
 };
