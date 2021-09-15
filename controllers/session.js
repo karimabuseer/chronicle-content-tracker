@@ -2,10 +2,15 @@ const user = require('../models').user;
 
 module.exports = { 
   login (req, res, next) {
-    res.render('session/new', { 
-       message: req.flash('error'),
-      title: 'Log In' 
-    });
+    try {
+      req.session.passport.user;
+      res.redirect('/')
+    } catch { 
+      res.render('session/new', { 
+        message: req.flash('error'),
+       title: 'Log In' 
+     })
+    };
   }, 
 
   logout (req, res, next) {
