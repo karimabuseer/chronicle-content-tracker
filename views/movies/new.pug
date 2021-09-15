@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(name="new_movie" action='/movies/add' method='POST')
+    div.label
+    div.title
+      input(name="title" type="text" placeholder="Title")
+    div.director
+      input(name="director" type="text" placeholder="Director")
+    button(id="add_movie" type="submit" value="Submit") Add Movie
