@@ -10,11 +10,11 @@ block content
       form(name='log-in-form', action='/session', method='POST')
           .label 
           .email
-            input.form-control(required type="email", name="email", placeholder="email")
+            input.form-control(required type="email", name="email", placeholder="email" autocomplete="email")
           .password
             input.form-control(required type="password", name="password", placeholder="password")
           button.btn.btn-block.form-control(type="submit", value="Submit" id='log-in-button') Log In
-    p
+    p.d-flex.flex-column.justify-content-center.align-items-center
       | Don't have an account? 
-      break 
+      br
       a(href="/users/new") Sign Up Here 
