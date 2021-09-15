@@ -18,35 +18,35 @@ block content
           div(class='rating') Rating: No Rating.
         div(class='status') Status: #{user_movie.status}
         
-        //- form(name="delete_book" action='/usersBooks/delete' method='POST')
-        //-   input(type="hidden" value=user_book.id name="book_id")
-        //-   input(type="hidden" name="_method" value="DELETE")
-        //-   button(id="delete_book" type="submit" value="Delete") Delete Book
+        form(name="delete_book" action='/usersBooks/delete' method='POST')
+          input(type="hidden" value=user_book.id name="book_id")
+          input(type="hidden" name="_method" value="DELETE")
+          button(id="delete_book" type="submit" value="Delete") Delete Book
         
-        //- form(name="update_book" action='/usersBooks/update' method='POST')
-        //-   input(type="hidden" value=user_book.id name="book_id")
-        //-   button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Status
-        //-   ul.dropdown-menu
-        //-     li
-        //-       input.status( name="status" value="Want to read" type="submit")
-        //-     li
-        //-       input.status( name="status" value="Reading" type="submit")
-        //-     li
-        //-       input.status( name="status" value="Read" type="submit") 
-        //-     br
+        form(name="update_book" action='/usersBooks/update' method='POST')
+          input(type="hidden" value=user_book.id name="book_id")
+          button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Status
+          ul.dropdown-menu
+            li
+              input.status( name="status" value="Want to read" type="submit")
+            li
+              input.status( name="status" value="Reading" type="submit")
+            li
+              input.status( name="status" value="Read" type="submit") 
+            br
 
-        //- form(name="update_rating" action='/usersBooks/updateRating' method='POST')
-        //-   input(type="hidden" value=user_book.id name="book_id")
-        //-   button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Rating
-        //-   ul.dropdown-menu
-        //-     li
-        //-       input.rating( name="rating" value="1" type="submit")
-        //-     li
-        //-       input.rating( name="rating" value="2" type="submit")
-        //-     li
-        //-       input.rating( name="rating" value="3" type="submit")
-        //-     li
-        //-       input.rating( name="rating" value="4" type="submit")
-        //-     li
-        //-       input.rating( name="rating" value="5" type="submit")  
-        //-     br
+        form(name="update_rating" action='/usersBooks/updateRating' method='POST')
+          input(type="hidden" value=user_book.id name="book_id")
+          button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Rating
+          ul.dropdown-menu
+            li
+              input.rating( name="rating" value="1" type="submit")
+            li
+              input.rating( name="rating" value="2" type="submit")
+            li
+              input.rating( name="rating" value="3" type="submit")
+            li
+              input.rating( name="rating" value="4" type="submit")
+            li
+              input.rating( name="rating" value="5" type="submit")  
+            br

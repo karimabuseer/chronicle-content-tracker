@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       "title": movieResult.title, 
       "releaseDate": movieResult.release_date, 
       "description":  movieResult.overview, 
-      "image": `https://image.tmdb.org/t/p/original/${movieResult.poster_path}`, 
+      "image": `https://image.tmdb.org/t/p/w154/${movieResult.poster_path}`, 
     };
 
     for( j = 0; j < Object.keys(movieAttributes).length; j++) {
