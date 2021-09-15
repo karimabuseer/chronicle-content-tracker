@@ -2,11 +2,11 @@ const usersMovie = require('../../models').users_movie;
 const movie = require('../../models').movie;
 
 
-exports.books = function(req, res, next) {
+exports.movies = function(req, res, next) {
   return usersMovie
     .findAll( {
       where: { user_id: req.session.passport.user },
-      include: movie,
+      include: 'movie',
       order: [['createdAt', 'DESC']] 
      })
     .then((userMovies) => { console.log(userMovies)
@@ -14,8 +14,8 @@ exports.books = function(req, res, next) {
       userMovies.forEach((userMovie) => {
         userMovieArray.push(userMovie.dataValues)
       })
-      return userBookArray
+      return userMovieArray
     }
     )
-    .then( (userMovieArray) => res.render( "userBooks/index", {user: req.session.passport.user, userBookList: userMovieArray, title: "Movie List"}));
+    .then( (userMovieArray) => res.render( "userMovies/index", {user: req.session.passport.user, userMovieList: userMovieArray, title: "Movie List"}));
 };
