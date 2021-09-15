@@ -13,7 +13,7 @@ module.exports = {
     }
   },
 
-  add (req, res) {
+  addBook (req, res) {
     return book
       .create({
         book_title: req.body.title,

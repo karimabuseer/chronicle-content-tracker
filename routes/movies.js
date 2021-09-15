@@ -8,6 +8,8 @@ router.get('/', movieList.movies);
 
 router.get('/new', addMovie.add_movie);
 
-router.post('/add', addMovie.add);
+router.post('/add', addMovie.addMovie);
+
+
 
 module.exports = router;

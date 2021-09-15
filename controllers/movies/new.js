@@ -6,13 +6,13 @@ module.exports = {
   })
   },
 
-  add (req, res) {
+  addMovie (req, res) {
   return movie
     .create({
       movie_title: req.body.title,
       movie_director: req.body.director
     })
-    .then(() => res.redirect("/movies"))
+    .then((movie) => res.redirect(`/usersMovies/${movie.id}`))
     .catch((error) => res.status(400).send(error));
   },
 };
