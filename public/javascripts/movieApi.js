@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //create img
     const imgWrapper = document.createElement("div");
     const imgTag = document.createElement("img")
-    imgTag.src = `https://image.tmdb.org/t/p/original/${movieResult.poster_path}`;
+    imgTag.src = `https://image.tmdb.org/t/p/w154/${movieResult.poster_path}`;
     imgTag.alt = `${movieResult.title} cover image`
     imgWrapper.appendChild(imgTag);
     
@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     titleTag.innerHTML = movieResult.title;
 
     //set autor
-    const authorTag = document.createElement("h4")
-    authorTag.innerHTML = movieResult.release_date
+    const releaseTag = document.createElement("h5")
+    releaseTag.innerHTML = `First released: ${movieResult.release_date}`
 
     //set description
     const descriptionTag = document.createElement("p")
     descriptionTag.innerHTML = movieResult.overview
 
-    //create add form
+    // create add form
     const movieForm = document.createElement("form")
     movieForm.setAttribute("method", "POST")
     const movieAttributes = {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       movieForm.appendChild(element);
     }
     
-    //create add form button
+    // create add form button
     const addButton = document.createElement("button")
     movieForm.setAttribute("method", "POST")
     addButton.classList.add('button')
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     movieCard.appendChild(imgWrapper);
     cardBody.appendChild(titleTag);
-    cardBody.appendChild(authorTag);
+    cardBody.appendChild(releaseTag);
     cardBody.appendChild(descriptionTag);
     cardBody.appendChild(movieForm);
     movieCard.appendChild(cardBody);
@@ -82,9 +82,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const query = document.getElementById('movie-search-query').value;
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=38fbfe658e2293a5ff72803359f32c61&query=${query}`)
     .then(response => response.json())
+    .then(data => { return data.results } )
     .then(movieResults => { 
       for (i = 0; i < movieResults.length; i++ ) {
-      createMovieCard(movieResults[i]);
+      createMovieCard(movieResults[i])
       }
     })
     .catch(err => {
