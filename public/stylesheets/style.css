@@ -1,6 +1,6 @@
 body {
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
   font-family: "American Typewriter";
 }
 
@@ -36,8 +36,8 @@ body {
   position: fixed;
   bottom: 0;
   width: 80vw;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 20px;
   background-color: #363A50;
   color: #FFFFFF;
   font-size: small;
@@ -50,7 +50,7 @@ body {
 
 .registration-wrapper {
   padding: 5vw;
-  margin: 20vh;
+  margin: 1vh;
   border: 2px solid #AC8352;
   border-radius: 8px;
   background-color: #272A3A;
@@ -81,5 +81,20 @@ body {
   border-radius: 8px;
   background-color: #272A3A;
   color:#FFFFFF;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-family: "American Typewriter";
+  }
   
+  .registration-wrapper {
+    padding: 5vw;
+    margin: 20vw;
+    border: 2px solid #AC8352;
+    border-radius: 8px;
+    background-color: #272A3A;
+  }
 }
