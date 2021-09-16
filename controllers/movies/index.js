@@ -1,6 +1,7 @@
 const movie = require('../../models').movie;
 
 exports.movies = function(req, res, next) {
+  try { 
   return movie
     .findAll()
     .then( (movies) => {
@@ -10,5 +11,8 @@ exports.movies = function(req, res, next) {
       })
       return movieList;
     })
-    .then( (movieList) => res.render( "movies/index", {movieList: movieList, title: "Movies"}));
+    .then( (movieList) => res.render( "movies/index", {movieList: movieList, title: "Movies", user: req.session.passport.user}));
+  } catch {
+    res.redirect('/session/new')
+  }
 };
