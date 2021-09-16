@@ -12,11 +12,10 @@ module.exports = (sequelize, DataTypes) => {
      static associate(models) {
       users_movie.belongsTo(models.user, {
         foreignKey: 'id',
-        as: 'User_id'
       });
       users_movie.belongsTo(models.movie, {
         foreignKey: 'id',
-        as: 'Movie_id'
+        as: 'movie'
       });
     }
 };

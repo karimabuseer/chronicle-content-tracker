@@ -13,7 +13,7 @@ module.exports = {
     }
   },
 
-  add (req, res) {
+  addBook (req, res) {
     return book
       .create({
         book_title: req.body.title,
@@ -39,7 +39,6 @@ module.exports = {
   },
 
   delete(req, res) {
-    console.log(req.params)
     return users_book
       .findByPk(req.params.book_id)
       

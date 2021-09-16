@@ -1,4 +1,4 @@
-// var bCrypt = require('bcrypt-nodejs');  
+const bcrypt = require('bcrypt');
 
 module.exports = function(passport, user) {
   const User = require('../../models').user;
@@ -13,7 +13,7 @@ module.exports = function(passport, user) {
           return done(null, false, { message: 'Incorrect username.' });
         }
         user = user.dataValues
-        if (user.encrypted_password != password) {
+        if (!bcrypt.compareSync(password, user.encrypted_password)) {
           return done(null, false, { message: 'Incorrect password.' });
         }
         return done(null, user, { message: 'Succesfully logged in.' });
