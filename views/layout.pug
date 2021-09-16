@@ -22,24 +22,15 @@ html(lang="en")
 
         //- logged in
         if user
-          ul.navbar-nav.mr-auto.flex-row.fullnav
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/books") Books
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/films") Films
-          ul.navbar-nav.flex-row.fullnav
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/users/" + user.id + "/books") My Books
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/users/" + user.id) Profile
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/session/logout") Log Out
+           ul.navbar-nav.flex-row.fullnav
+
  
           button.btn.navbar-toggler.dropnav(type="button", data-toggle="dropdown") Menu
             .dropdown-menu.dropdown-menu-right
                 a.dropdown-item(href="/books" type="submit") Books
                 a.dropdown-item(href="/movies") Movies
                 a.dropdown-item(href="/users/" + user.id + "/books") My Books
+                a.dropdown-item(href="/users/" + user.id + "/movies") My Movies
                 a.dropdown-item(href="/users/" + user.id) Profile
                 a.dropdown-item(href="/session/logout") Log Out
     

@@ -14,7 +14,7 @@ var sessionRouter = require('./routes/session');
 var booksRouter = require('./routes/books');
 var moviesRouter = require('./routes/movies');
 var usersBooksRouter = require('./routes/usersBooks');
-
+var usersMoviesRouter = require('./routes/usersMovies');
 
 var app = express();
 
@@ -39,7 +39,7 @@ app.use('/session', sessionRouter);
 app.use('/books', booksRouter);
 app.use('/movies', moviesRouter);
 app.use('/usersBooks', usersBooksRouter);
-app.use('/usersMovies', usersBooksRouter);
+app.use('/usersMovies', usersMoviesRouter);
 app.use(express.static('public'));
 
 

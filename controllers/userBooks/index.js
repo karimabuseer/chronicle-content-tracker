@@ -4,7 +4,8 @@ exports.books = function(req, res, next) {
   return usersBook
     .findAll( {
       where: { user_id: req.session.passport.user },
-      include: 'book'
+      include: 'book',
+      order: [['createdAt', 'DESC']] 
      })
     .then((userBooks) => {
       const userBookArray = [];

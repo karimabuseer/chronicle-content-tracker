@@ -6,7 +6,7 @@ var addBook = require('../controllers/books/new.js')
 /* GET home page. */
 router.get('/', bookList.books);
 
-router.post('/', addBook.add);
+router.post('/', addBook.addBook);
 
 router.post('/add', addBook.delete);
 
