@@ -13,6 +13,7 @@
     "node": "16.6"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -31,7 +32,6 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "bcrypt": "^5.0.1",
     "jest": "^27.1.0",
     "jest-puppeteer": "^5.0.4",
     "nodemon": "^2.0.12",
