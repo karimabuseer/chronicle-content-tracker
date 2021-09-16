@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   searchButton.addEventListener( 'click', (event) => {
     event.preventDefault();
+    list.innerHTML = "";
     const query = document.getElementById('movie-search-query').value;
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=38fbfe658e2293a5ff72803359f32c61&query=${query}`)
     .then(response => response.json())
