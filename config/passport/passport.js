@@ -10,7 +10,7 @@ module.exports = function(passport, user) {
     function(username, password, done) { 
       User.findOne({ where: { email: username } }).then(function (user) {
         if (!user) {
-          return done(null, false, { message: 'Incorrect username.' });
+          return done(null, false, { message: 'Incorrect email.' });
         }
         user = user.dataValues
         if (!bcrypt.compareSync(password, user.encrypted_password)) {
