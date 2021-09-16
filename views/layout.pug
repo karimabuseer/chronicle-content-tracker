@@ -9,37 +9,30 @@ html(lang="en")
     title Chronicle
   body
     header.header
-      nav.navbar.navbar-expand-md
+      nav.navbar
         a.navbar-brand(href="/")
           img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle' style='height:50px;')
-        
-        ul.navbar-nav.mr-auto
-
-          if user
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/books") Books
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/movies") Movies
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/games") Games
-
-        if user
-          ul.navbar-nav
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/users/" + user.id + "/movies") My Movies
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/users/" + user.id + "/books") My Books
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/users/" + user.id) Profile
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/session/logout") Log Out
-
+          //- logged out
         if !user
-          ul.navbar-nav
+          ul.navbar-nav.flex-row
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/users/new") Sign Up
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/session/new") Log In
+
+        //- logged in
+        if user
+           ul.navbar-nav.flex-row.fullnav
+
+ 
+          button.btn.navbar-toggler.dropnav(type="button", data-toggle="dropdown") Menu
+            .dropdown-menu.dropdown-menu-right
+                a.dropdown-item(href="/books" type="submit") Books
+                a.dropdown-item(href="/movies") Movies
+                a.dropdown-item(href="/users/" + user.id + "/books") My Books
+                a.dropdown-item(href="/users/" + user.id + "/movies") My Movies
+                a.dropdown-item(href="/users/" + user.id) Profile
+                a.dropdown-item(href="/session/logout") Log Out
     
     main.container-fluid(role="main")
       block content
