@@ -5,6 +5,7 @@ module.exports = {
   add_book (req, res, next) {
     try { 
       res.render('books/new', {
+        user: req.session.passport.user,
         user_id: req.session.passport.user, 
         title: 'Add Book'
       })

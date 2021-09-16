@@ -3,7 +3,8 @@ module.exports = {
   add_movie (req, res, next) {
     res.render('movies/index', { 
       title: 'Add Movie',
-      user_id: req.session.passport.user
+      user_id: req.session.passport.user,
+      user: req.session.passport.user
   })
   },
 
