@@ -1,4 +1,6 @@
 const user = require('../models').user;
+const bcrypt = require('bcrypt');
+
 module.exports = { 
   sign_up (req, res) {
   try {
@@ -12,11 +14,14 @@ module.exports = {
   },
 
   add (req, res) {
+    var hash = bcrypt.hashSync(req.body.password, 8);
+    console.log(bcrypt.compareSync(req.body.password, hash))
     return user
+    
       .create({
         user_name: req.body.username,
         email: req.body.email,
-        encrypted_password: req.body.password
+        encrypted_password: hash
       })
       .then((user) => req.login(user,(err) => {
         console.log("success");
