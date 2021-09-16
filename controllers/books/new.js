@@ -39,7 +39,6 @@ module.exports = {
   },
 
   delete(req, res) {
-    console.log(req.params)
     return users_book
       .findByPk(req.params.book_id)
       

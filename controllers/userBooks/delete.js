@@ -1,7 +1,6 @@
 const usersBook = require('../../models').users_book;
 module.exports = {
   delete (req, res) {
-    console.log(req.params)
     return usersBook
     .destroy({
       where: {

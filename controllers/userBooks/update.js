@@ -8,7 +8,7 @@ module.exports = {
         user_id: req.session.passport.user,
         id: req.body.book_id }
       })
-    .then(() => console.log(req.body.status), res.redirect(`/users/${req.session.passport.user}/books`))
+    .then(() => res.redirect(`/users/${req.session.passport.user}/books`))
     .catch((error) => res.status(400).send(error));
     }
 };

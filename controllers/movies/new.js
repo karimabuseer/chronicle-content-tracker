@@ -8,7 +8,6 @@ module.exports = {
   },
 
   addMovie (req, res) {
-  console.log(req.body)
   return movie
     .create({
       movie_title: req.body.title,

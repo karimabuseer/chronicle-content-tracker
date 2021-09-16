@@ -9,7 +9,7 @@ exports.movies = function(req, res, next) {
       include: 'movie',
       order: [['createdAt', 'DESC']] 
      })
-    .then((userMovies) => { console.log(userMovies)
+    .then((userMovies) => { 
       const userMovieArray = [];
       userMovies.forEach((userMovie) => {
         userMovieArray.push(userMovie.dataValues)

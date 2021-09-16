@@ -16,8 +16,6 @@ var moviesRouter = require('./routes/movies');
 var usersBooksRouter = require('./routes/usersBooks');
 var usersMoviesRouter = require('./routes/usersMovies');
 
-
-
 var app = express();
 
 // view engine setup
