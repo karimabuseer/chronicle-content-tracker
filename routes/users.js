@@ -14,10 +14,10 @@ router.put('/:id', users.sign_up)
 router.delete('/:id', users.sign_up)
 router.get('/:id/books', usersBook.books)
 router.get('/:id/movies', movieList.movies)
-router.get('/deletePage', delete_page.deletePage)
+router.get('/deletePage', users.deletePage)
 router.get('/:id', users.index)
-router.post('/delete', delete_user.deleteUser)
+router.post('/delete', users.deleteUser)
 router.post('/update', users.updateUsername)
-router.post('/updateP', user_password.updatePassword)
+router.post('/updateP', users.updatePassword)
 
 module.exports = router;
