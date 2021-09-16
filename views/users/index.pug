@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+
+    p Welcome, #{username}!
+    p Here you can update your user settings, or delete your account. 
+
+    form(action='/users/deletePage' method="GET")
+      button(type="submit") Delete Profile
+
+    form(name="update_username" action='/users/update' method='POST')
+      input(type="text" name="username" placeholder="New name...")
+      input(type="hidden" name="_method" value="PUT")
+      button(type="submit") Update username
+
+    form(name="update_password" action='/users/updateP' method='POST')
+      input(type="text" name="password" placeholder="New password...")
+      input(type="hidden" name="_method" value="PUT")
+      button(type="submit") Update password
