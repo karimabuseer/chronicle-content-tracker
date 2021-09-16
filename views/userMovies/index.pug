@@ -3,7 +3,7 @@ extends ../layout
 block content
   h1= title
   p Welcome to #{title}
-  a(href="/users/" + user_id+ "/movies") Add Movie
+  a(href="/movies") Add Movie
   list(class='booklist')
     ul(class='book')
       each user_movie in userMovieList
