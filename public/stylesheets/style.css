@@ -12,13 +12,8 @@ body {
   font-size: small;
 }
 
-.fullnav {
-  display: none;
-}
-
 .navbar .btn {
   margin: 5px;
-  padding: 10px
 }
 
 .search_bar_text {
@@ -88,31 +83,12 @@ body {
   color:#FFFFFF;
 }
 
-.container-fluid {
-  margin-bottom: 50px;
-}
-
-.booklist-wrapper h1 {
-  color: #AC8352;
-}
-
-.setting_name {
-  padding-right: 10px;
-  padding-bottom: 10px;
-  line-height: 30px;
-}
-
-.book_setting {
-  color: #AC8352;
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   body {
     padding-left: 10vw;
     padding-right: 10vw;
     font-family: "American Typewriter";
   }
-
   
   .registration-wrapper {
     padding: 5vw;
@@ -120,20 +96,5 @@ body {
     border: 2px solid #AC8352;
     border-radius: 8px;
     background-color: #272A3A;
-  }
-  
-  .fullnav {
-    display: flex;
-  }
-
-  .dropnav {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .navbar .btn {
-    margin: 5px;
-    padding: 5px
   }
 }
