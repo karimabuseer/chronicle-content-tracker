@@ -1,52 +1,46 @@
 extends ../layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  a(href="/movies") Add Movie
-  list(class='booklist')
-    ul(class='book')
-      each user_movie in userMovieList
-        div(class='author') Title: #{user_movie.movie.movie_title}
-        div(class='title') Release Date: #{user_movie.movie.release_date}
-        br
-        div(class='cover_art')
-          img(src=user_movie.movie.cover_art)
-        if (user_movie.rating )
-          div(class='rating') Rating:#{user_movie.rating}
-        else 
-          div(class='rating') Rating: No Rating.
-        div(class='status') Status: #{user_movie.status}
-        
-        form(name="delete_movie" action='/usersMovies/delete' method='POST')
-          input(type="hidden" value=user_movie.id name="movie_id")
-          input(type="hidden" name="_method" value="DELETE")
-          button(id="delete_movie" type="submit" value="Delete") Delete Movie
-        
-        form(name="update_movie" action='/usersMovies/update' method='POST')
-          input(type="hidden" value=user_movie.id name="movie_id")
-          button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Status
-          ul.dropdown-menu
-            li
-              input.status( name="status" value="Want to watch" type="submit")
-            li
-              input.status( name="status" value="Watching" type="submit")
-            li
-              input.status( name="status" value="Watched" type="submit") 
-            br
+  .booklist-wrapper.d-flex.flex-column.justify-content-center.align-items-center
+    h1 My Movie list
+    
+    .booklist
+        each user_movie in userMovieList
+          .book.card.flex-row
+            
+            .img-wrapper
+              img.card-img-left(src= user_movie.movie.cover_art)
 
-        form(name="update_rating" action='/usersMovies/updateRating' method='POST')
-          input(type="hidden" value=user_movie.id name="movie_id")
-          button.btn.btn-primary.dropdown-toggle(type="button", data-toggle="dropdown") Rating
-          ul.dropdown-menu
-            li
-              input.rating( name="rating" value="1" type="submit")
-            li
-              input.rating( name="rating" value="2" type="submit")
-            li
-              input.rating( name="rating" value="3" type="submit")
-            li
-              input.rating( name="rating" value="4" type="submit")
-            li
-              input.rating( name="rating" value="5" type="submit")  
-            br
+            .card-body
+              .title.h5.h4-sm #{user_movie.movie.movie_title}
+              .author.h6.h7-sm released: #{user_movie.movie.release_date}
+              
+              .status-wrapper.d-flex.justify-content-between 
+                .setting_name Status: 
+                  span.book_setting #{user_movie.status}
+                form(name="update_movie" action='/usersMovies/update' method='POST')
+                  input(type="hidden" value=user_movie.id name="movie_id")
+                  button.btn.dropdown-toggle(type="button", data-toggle="dropdown") Status
+                  .dropdown-menu
+                      input.dropdown-item( name="status" value="Want to watch" type="submit")
+                      input.dropdown-item( name="status" value="Watching" type="submit")
+                      input.dropdown-item( name="status" value="Watched" type="submit") 
+              
+              .rating-wrapper.d-flex.justify-content-between 
+                .setting_name Rating: 
+                  span.book_setting #{user_movie.rating}
+                form(name="update_rating" action='/usersBooks/updateRating' method='POST')
+                  input(type="hidden" value=user_movie.id name="movie_id")
+                  button.btn.dropdown-toggle(type="button", data-toggle="dropdown") Rating
+                  .dropdown-menu
+                      input.dropdown-item( name="rating" value="1" type="submit")
+                      input.dropdown-item( name="rating" value="2" type="submit")
+                      input.dropdown-item( name="rating" value="3" type="submit")
+                      input.dropdown-item( name="rating" value="4" type="submit")
+                      input.dropdown-item( name="rating" value="5" type="submit")  
+
+              .delete-wrapper
+              form(name="delete_movie" action='/usersMovies/delete' method='POST')
+                input(type="hidden" value=user_movie.id name="movie_id")
+                input(type="hidden" name="_method" value="DELETE")
+                button.btn(id="delete_movie" type="submit" value="Delete") Delete Movie
