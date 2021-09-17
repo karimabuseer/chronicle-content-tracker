@@ -9,22 +9,17 @@ html(lang="en")
     title Chronicle
   body
     header.header
-      nav.navbar.navbar-expand-md
+      nav.navbar
         a.navbar-brand(href="/")
           img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle' style='height:50px;')
-        
-        ul.navbar-nav.mr-auto
-
-          if user
+        if user
+          ul.navbar-nav.mr-auto.flex-row.fullnav
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/books") Books
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/movies") Movies
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/games") Games
 
-        if user
-          ul.navbar-nav
+          ul.navbar-nav.flex-row.fullnav
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/users/" + user.id + "/movies") My Movies
             li.navbar-item.d-flex.justify-content-center.align-items-center
@@ -43,15 +38,13 @@ html(lang="en")
                 a.dropdown-item(href="/users/" + user.id) Profile
                 a.dropdown-item(href="/session/logout") Log Out
                 
-
         if !user
-          ul.navbar-nav
+          ul.navbar-nav.flex-row
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/users/new") Sign Up
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/session/new") Log In
 
-    
     main.container-fluid(role="main")
       block content
     
