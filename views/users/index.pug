@@ -5,15 +5,19 @@ block content
     p Welcome, #{username}!
     p Here you can update your user settings, or delete your account. 
 
-    form(action='/users/deletePage' method="GET")
-      button.btn(type="submit") Delete Profile
-
     form(name="update_username" action='/users/update' method='POST')
-      input(type="text" name="username" placeholder="New username...")
-      input(type="hidden" name="_method" value="PUT")
-      button.btn(type="submit") Update username
+      .input-group.mb-3
+        input(type="text" name="username" placeholder="New username...")
+        input(type="hidden" name="_method" value="PUT")
+        .input-group-append
+          button.btn(type="submit") Update username
 
     form(name="update_password" action='/users/updateP' method='POST')
-      input(type="text" name="password" placeholder="New password...")
-      input(type="hidden" name="_method" value="PUT")
-      button.btn(type="submit") Update password
+      .input-group.mb-3
+        input(type="text" name="password" placeholder="New password...")
+        input(type="hidden" name="_method" value="PUT")
+        .input-group-append
+          button.btn(type="submit") Update password
+
+    form(action='/users/deletePage' method="GET")
+      button.btn(type="submit") Delete Profile

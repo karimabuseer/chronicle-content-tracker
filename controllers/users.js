@@ -12,6 +12,7 @@ module.exports = {
       })
       .then((user) => 
     res.render('users/index', { 
+      user: req.session.passport.user,
       username: user.user_name,
       user_id: user.id,
       email: user.email
@@ -32,7 +33,6 @@ module.exports = {
 
   add (req, res) {
     var hash = bcrypt.hashSync(req.body.password, 8);
-    console.log(bcrypt.compareSync(req.body.password, hash))
     return user
     
       .create({
@@ -41,7 +41,6 @@ module.exports = {
         encrypted_password: hash
       })
       .then((user) => req.login(user,(err) => {
-        console.log("success");
       }))
       .then(() => { res.redirect('/')})
       .catch((error) => res.status(400).send(error));
@@ -59,9 +58,6 @@ module.exports = {
       },
       
     updatePassword(req, res){
-      console.log("Password under here!")
-      console.log(req.body.password)
-      console.log(req.session.passport.user)
       return user
       .update(
         {encrypted_password: req.body.password },
@@ -73,7 +69,6 @@ module.exports = {
       },
 
     deleteUser (req, res) {
-      console.log('I am in delete page')
       return user
       .destroy({
         where: {
@@ -85,8 +80,9 @@ module.exports = {
     },
 
     deletePage (req, res) {
-      console.log('I am in delete page')
-      res.render("users/delete")
-    } 
+      res.render("users/delete", {
+        user: req.session.passport.user
+      })
+    }
 };
 

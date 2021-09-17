@@ -9,22 +9,17 @@ html(lang="en")
     title Chronicle
   body
     header.header
-      nav.navbar.navbar-expand-md
+      nav.navbar
         a.navbar-brand(href="/")
           img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle' style='height:50px;')
-        
-        ul.navbar-nav.mr-auto
-
-          if user
+        if user
+          ul.navbar-nav.mr-auto.flex-row.fullnav
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/books") Books
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/movies") Movies
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/games") Games
 
-        if user
-          ul.navbar-nav
+          ul.navbar-nav.flex-row.fullnav
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/users/" + user.id + "/movies") My Movies
             li.navbar-item.d-flex.justify-content-center.align-items-center
@@ -43,28 +38,24 @@ html(lang="en")
                 a.dropdown-item(href="/users/" + user.id) Profile
                 a.dropdown-item(href="/session/logout") Log Out
                 
-
         if !user
-          ul.navbar-nav
+          ul.navbar-nav.flex-row
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/users/new") Sign Up
             li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/session/new") Log In
 
-    
     main.container-fluid(role="main")
       block content
     
     footer.footer
       .container.d-flex.justify-content-center.align-items-center
-        nav.navbar.navbar-expand-md
-           ul.navbar-nav.mr-auto
-            li.nav-link.justify-content-center.align-items-center
-              a(href="") Contact Us
-            li.navbar-text.justify-content-center.align-items-center
-              p Created by Noodle Gang anno 2021
-            li.nav-link.justify-content-center.align-items-center
-              a(href="https://github.com/karimabuseer/chronicle-content-tracker") Github
+          .footer-element.d-flex.justify-content-center.align-items-center
+            a(href="") Contact Us
+          .footer-element.d-flex.justify-content-center.align-items-center
+            p Created by Noodle Gang anno 2021
+          .footer-element.d-flex.justify-content-center.align-items-center
+            a(href="https://github.com/karimabuseer/chronicle-content-tracker") Github
          
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")

@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     //create img
     const imgWrapper = document.createElement("div");
+    imgWrapper.classList.add("img-wrapper");
     const imgTag = document.createElement("img")
     imgTag.src = `https://image.tmdb.org/t/p/w154/${movieResult.poster_path}`;
     imgTag.alt = `${movieResult.title} cover image`
@@ -85,7 +86,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => { return data.results } )
     .then(movieResults => {
-      console.log(movieResults)
       for (i = 0; i < movieResults.length; i++ ) {
       createMovieCard(movieResults[i])
       }
