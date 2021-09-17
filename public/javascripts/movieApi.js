@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     //create img
     const imgWrapper = document.createElement("div");
+    imgWrapper.classList.add("img-wrapper");
     const imgTag = document.createElement("img")
     imgTag.src = `https://image.tmdb.org/t/p/w154/${movieResult.poster_path}`;
     imgTag.alt = `${movieResult.title} cover image`

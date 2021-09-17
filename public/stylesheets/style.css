@@ -108,6 +108,10 @@ body {
   color: #AC8352;
 }
 
+.img-wrapper {
+  padding-right: 10px
+}
+
 @media only screen and (min-width: 900px) {
   body {
     padding-left: 10vw;
