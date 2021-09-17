@@ -1,7 +1,6 @@
 const usersMovie = require('../../models').users_movie;
 module.exports = { 
   add (req, res) {
-    console.log('we are in add userMovies')
     return usersMovie
     .create({
         user_id: req.session.passport.user,

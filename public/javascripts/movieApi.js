@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => { return data.results } )
     .then(movieResults => {
-      console.log(movieResults)
       for (i = 0; i < movieResults.length; i++ ) {
       createMovieCard(movieResults[i])
       }
