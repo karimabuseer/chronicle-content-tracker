@@ -29,7 +29,7 @@ block content
               .rating-wrapper.d-flex.justify-content-between 
                 .setting_name Rating: 
                   span.book_setting #{user_movie.rating}
-                form(name="update_rating" action='/usersBooks/updateRating' method='POST')
+                form(name="update_rating" action='/usersMovies/updateRating' method='POST')
                   input(type="hidden" value=user_movie.id name="movie_id")
                   button.btn.dropdown-toggle(type="button", data-toggle="dropdown") Rating
                   .dropdown-menu
