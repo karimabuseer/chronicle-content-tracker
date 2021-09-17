@@ -33,19 +33,21 @@ body {
 }
 
 .footer {
+  display: none;
   position: fixed;
   bottom: 0;
   width: 80vw;
   height: 40px;
-  line-height: 20px;
+  line-height: 40px;
   background-color: #363A50;
   color: #FFFFFF;
   font-size: small;
 }
 
 .footer a {
-  padding-inline: 10vh;
+  padding-inline: 5vh;
   color: #FFFFFF;
+  font-size:smaller;
 }
 
 .registration-wrapper {
@@ -96,5 +98,24 @@ body {
     border: 2px solid #AC8352;
     border-radius: 8px;
     background-color: #272A3A;
+  }
+  
+  .fullnav {
+    display: flex;
+  }
+
+  .dropnav {
+    display: none;
+  }
+
+  .footer {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .navbar .btn {
+    margin: 5px;
+    padding: 5px
   }
 }
