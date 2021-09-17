@@ -2,7 +2,7 @@ extends ../layout
 
 block content
 
-  .alert.alert-danger Warning delete is instantaneous and cannot be undone!
+  .alert.alert-danger Warning! Delete is instantaneous and cannot be undone!
 
   form(name="delete_profile" action='/users/delete' method='POST')
     input(type="hidden" name="_method" value="DELETE")
