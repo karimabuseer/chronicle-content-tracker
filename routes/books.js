@@ -10,4 +10,6 @@ router.post('/', addBook.addBook);
 
 router.post('/add', addBook.delete);
 
+router.post('/api', bookList.search)
+
 module.exports = router;
