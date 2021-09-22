@@ -1,5 +1,5 @@
 const usersBook = require('../../models').users_book;
-import fetch from "node-fetch";
+axios = require('axios').default;
 
 module.exports = {
 
@@ -25,11 +25,11 @@ module.exports = {
       }
     },
 
-   async search (req, res) {
+    async search (req, res) {
       // try {
       console.log('we are in search')
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=Dune&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
-        return response
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=Dune&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
+        .then(response => res.json(response));
     
         // return res.json({
         //         success: true,
