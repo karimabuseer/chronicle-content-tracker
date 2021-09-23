@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     list.innerHTML = "";
     const query = document.getElementById('book-search-query').value;
     fetch('books/api')
-    .then(response => console.log(response))
+    .then(response => response.json())
+    .then((data) => {return data.items})
     // fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
     // .then(response => response.json())
     // .then((data) => {return data.items})
