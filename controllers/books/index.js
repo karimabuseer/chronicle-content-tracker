@@ -27,8 +27,8 @@ module.exports = {
 
     async search (req, res) {
       // try {
-      console.log('we are in search')
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=Dune&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
+        query = req.params.book
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${process.env.GOOGLEBOOKS_API_KEY}`)
         .then(response => res.json(response.data));
     
         // return res.json({
