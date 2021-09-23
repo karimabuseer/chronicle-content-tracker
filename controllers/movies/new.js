@@ -24,4 +24,18 @@ module.exports = {
     .then((movie) => res.redirect(`/usersMovies/${movie.id}`))
     .catch((error) => res.status(400).send(error));
   },
+
+  search (req, res) {
+    // try {
+      console.log(req.params)
+      query = req.params.movie
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${query}`)
+      .then(response => res.json(response.results));
+    // } catch (err) {
+    //   return res.status(500).json({
+    //     success: false,
+    //     message: err.message,
+    //   })
+    // }
+  } 
 };
