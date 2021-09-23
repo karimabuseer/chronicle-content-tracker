@@ -26,16 +26,16 @@ module.exports = {
   },
 
   search (req, res) {
-    // try {
+     try {
       console.log(req.params)
       query = req.params.movie
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${query}`)
       .then(response => res.json(response.results));
-    // } catch (err) {
-    //   return res.status(500).json({
-    //     success: false,
-    //     message: err.message,
-    //   })
-    // }
+    } catch (err) {
+      return res.status(500).json({
+        success: false,
+        message: err.message,
+      })
+    }
   } 
 };
