@@ -25,32 +25,17 @@ module.exports = {
       }
     },
 
-    async search (req, res) {
-      // try {
+    search (req, res) {
+      try {
         query = req.params.book
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${process.env.GOOGLEBOOKS_API_KEY}`)
         .then(response => res.json(response.data));
-    
-        // return res.json({
-        //         success: true,
-        //         results
-        //     })
-      // } catch (err) {
-      //   return res.status(500).json({
-      //     success: false,
-      //     message: err.message,
-      //   })
-      // }
+      } catch (err) {
+        return res.status(500).json({
+          success: false,
+          message: err.message,
+        })
+      }
 
     } 
 };
-
-
-   // fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
-    // .then(response => response.json())
-    // .then((data) => {return data.items})
-    // .then((bookResults) => {
-    //   for (i = 0; i < bookResults.length; i++ ) {
-    //     createBookCard(bookResults[i]);
-    //   }
-    // });
