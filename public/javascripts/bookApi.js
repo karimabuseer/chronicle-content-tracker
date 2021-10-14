@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     event.preventDefault();
     list.innerHTML = "";
     const query = document.getElementById('book-search-query').value;
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
+    fetch(`books/api/${query}`)
     .then(response => response.json())
     .then((data) => {return data.items})
     .then((bookResults) => {

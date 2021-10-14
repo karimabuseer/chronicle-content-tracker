@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     addButton.classList.add('button')
     addButton.classList.add('btn')
     addButton.setAttribute("type", "submit")
-    addButton.innerHTML = ("Add movie")
+    addButton.innerHTML = ("Add Movie")
     movieForm.appendChild(addButton)
 
     movieCard.appendChild(imgWrapper);
