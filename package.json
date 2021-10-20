@@ -20,6 +20,8 @@
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
     "express-session": "^1.17.2",
+    "heroku": "^7.59.0",
+    "heroku-cli": "^7.0.9",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.0",
     "morgan": "~1.9.1",
