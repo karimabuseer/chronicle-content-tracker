@@ -1,6 +1,9 @@
 # Chronicle Content Tracker
 Final Project for Makers. For information about our approach and process, check out our wiki. 
 
+## Demo site
+The project is currently live. To take a look at it, [please visit this webpage.](https://chronicle-content-tracker.herokuapp.com/)
+
 ## User Stories
 MVP user stories
 ```
@@ -17,7 +20,7 @@ I want to be able to see the books on my list.
 
 ```
 As a User,
-So that I can track books I have read,
+So that I can track books I have read,s
 I want to be able to mark books in my list as 'Read'.
 ```
 
