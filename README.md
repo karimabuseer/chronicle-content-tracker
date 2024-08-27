@@ -1,5 +1,5 @@
 # Chronicle Content Tracker
-Final Project for Makers. For information about our approach and process, check out our wiki. 
+For information about our approach and process, check out our wiki. 
 
 ## Demo site
 The project is currently live. To take a look at it, [please visit this webpage.](https://chronicle-content-tracker.herokuapp.com/)
